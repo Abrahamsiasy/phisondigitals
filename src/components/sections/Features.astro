@@ -1,51 +1,44 @@
 ---
 import Container from "../shared/Container.astro";
-import Paragraph from "../shared/Paragraph.astro";
 import Title from "../shared/Title.astro";
-
+import Paragraph from "../shared/Paragraph.astro";
+import { features } from "../../utils/data.ts";
 ---
 
-<section id="features">
-    <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12">
-        
-        <div class="flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
-            <Title>
-                We provide Important Features for Digital Marketing
+<section id="features" class="py-16 md:py-20 bg-box-bg">
+    <Container>
+        <div class="text-center mb-16">
+            <Title className="mb-4">
+                Why Choose GojoTech?
             </Title>
-            <Paragraph className="mt-8">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                <br> 
-                Minus, saepe aliquid autem alias vero distinctio dignissimos consequatur?
+            <Paragraph className="text-lg max-w-3xl mx-auto">
+                We combine local market expertise with cutting-edge technology to deliver solutions that work for Ethiopian businesses.
             </Paragraph>
-            <Paragraph className="mt-2">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, saepe aliquid autem alias vero distinctio dignissimos consequatur?
-            </Paragraph>
-            <ul class="mt-8 space-y-4 text-heading-3 font-medium">
-                <li>
-                    <span class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> Web site Analysis
-                </li>
-                <li>
-                    <span class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> Free optimazation.
-                </li>
-                <li>
-                    <span class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                </li>
-                <li>
-                    <span class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> Content Optimization.
-                </li>
-            </ul>
         </div>
 
-        <div class="max-w-md mx-auto midmd:max-w-none lg:mx-0  lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto">
-            <div class="w-full h-80 sm:h-96 midmd:h-full relative">
-                <div class="absolute rotate-45 -left-5 md:-left-10 lg:-left-20 xl:-left-24 p-1 top-1/2 w-16 h-16 bg-gradient-to-br from-primary to-orange-400 blur-3xl opacity-50"></div>
-                <div class="absolute  p-1 -top-4 md:-top-10 right-0 w-20 h-20 bg-gradient-to-br from-primary to-orange-400 rounded-full blur-3xl opacity-60"></div>
-                
-                <span class="absolute w-full aspect-[16/5] -skew-x-12 rounded-full bg-gradient-to-tr from-primary to-green-400 opacity-40 blur-2xl left-0 bottom-0"></span>
-                <img src={"/images/dev-with-c.webp"} alt="banner image" 
-                width="1240" height="1385"
-                class=" w-auto left-1/2 -translate-x-1/2 absolute bottom-0 max-h-full" />
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+                <div class="group bg-white dark:bg-box-bg rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] relative overflow-hidden">
+                    <!-- Subtle hover background -->
+                    <div class="absolute inset-0 bg-[#022E01]/5 dark:bg-[#4ade80]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    <div class="flex items-start gap-4 relative z-10">
+                        <div class="flex-shrink-0 w-10 h-10 bg-[#022E01]/10 dark:bg-[#4ade80]/20 rounded-lg flex items-center justify-center text-xl group-hover:bg-[#022E01]/20 dark:group-hover:bg-[#4ade80]/30 transition-colors duration-300">
+                            {feature.icon}
+                        </div>
+                        
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white group-hover:text-[#022E01] dark:group-hover:text-[#4ade80] transition-colors duration-200">
+                                {feature.title}
+                            </h3>
+                            
+                            <p class="text-sm text-heading-3 leading-relaxed">
+                                {feature.description}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            ))}
         </div>
     </Container>
 </section>

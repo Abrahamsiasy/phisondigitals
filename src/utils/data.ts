@@ -1,40 +1,71 @@
-const services = [
+export const services = [
     {
-        title: "Social media marketing",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti qui soluta cupiditate",
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"> <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-        </svg>`,
+        title: "Foreign Consulting",
+        description: "Comprehensive business setup and consulting services for foreign companies entering the Ethiopian market. We handle legal compliance, market entry strategies, and operational setup.",
+        icon: "🌍",
+        link: "/services/foreign-consulting"
     },
     {
-        title: "Amazon affiliate marketing",
-        description: "Sunt, ipsam, necessitatibus sint fugit officia laboriosam minima ab ullam at magni et. Quaerat, sint!",
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"> <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-        </svg>`,
+        title: "Website Development",
+        description: "Custom website development tailored for Ethiopian businesses. From responsive design to e-commerce integration, we create modern, fast-loading websites that drive results.",
+        icon: "💻",
+        link: "/services/mobile-app-development"
     },
     {
-        title: "Email marketing",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti qui soluta cupiditate",
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"> <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-        </svg>`,
+        title: "Software Development",
+        description: "Enterprise software solutions designed for Ethiopian business needs. Custom applications, CRM systems, and business process automation to streamline your operations.",
+        icon: "⚙️",
+        link: "/services/software-development"
     },
     {
-        title: "Social media marketing",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti qui soluta cupiditate",
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"> <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-        </svg>`,
+        title: "Custom App Customization",
+        description: "Tailored customization of existing applications to meet your specific business requirements. Integration, modification, and optimization of third-party software solutions.",
+        icon: "🔧",
+        link: "/services/custom-app-customization"
     },
     {
-        title: "Amazon affiliate marketing",
-        description: "Sunt, ipsam, necessitatibus sint fugit officia laboriosam minima ab ullam at magni et. Quaerat, sint!",
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"> <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-        </svg>`,
+        title: "OJS Support",
+        description: "Specialized support for Open Journal Systems (OJS) used by Ethiopian universities and research institutions. Installation, customization, and ongoing maintenance services.",
+        icon: "📚",
+        link: "/services/ojs-support"
     },
     {
-        title: "Email marketing",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti qui soluta cupiditate",
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"> <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-        </svg>`,
-    },
+        title: "E-commerce Solutions",
+        description: "Complete e-commerce platform development for Ethiopian businesses. From online stores to marketplace solutions, we help you sell products and services online effectively.",
+        icon: "🛒",
+        link: "/services/ecommerce-solutions"
+    }
 ];
 
-export { services };
+export const features = [
+    {
+        title: "Local Market Expertise",
+        description: "Deep understanding of Ethiopian business landscape, regulations, and cultural nuances to deliver solutions that work in the local context.",
+        icon: "🏢"
+    },
+    {
+        title: "Custom Development",
+        description: "Tailored solutions built from the ground up to meet your specific business requirements, not off-the-shelf products that don't fit your needs.",
+        icon: "⚙️"
+    },
+    {
+        title: "Ongoing Support",
+        description: "Comprehensive post-launch support including maintenance, updates, training, and 24/7 technical assistance to ensure your systems run smoothly.",
+        icon: "🛠️"
+    },
+    {
+        title: "Scalable Solutions",
+        description: "Future-proof technology that grows with your business, designed to handle increased traffic, users, and functionality as your company expands.",
+        icon: "📈"
+    },
+    {
+        title: "Security Focus",
+        description: "Enterprise-grade security measures to protect your data and systems, with regular security audits and compliance with Ethiopian data protection standards.",
+        icon: "🔒"
+    },
+    {
+        title: "Cost-Effective",
+        description: "Competitive pricing tailored for Ethiopian businesses, with flexible payment options and transparent pricing without hidden costs or surprises.",
+        icon: "💰"
+    }
+];

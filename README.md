@@ -1,54 +1,90 @@
-<h1>AgenceX Landing page</h1>
+# GojoTech Website
 
-A simple landing page for a digital agency
+A modern, responsive website for GojoTech PLC - a leading Ethiopian tech company powering e-commerce platforms like GojoShop and GojoSeller.
 
-![AgenceX light Theme](./screens/demoLight.webp)
-![AgenceX Dark Theme](./screens/demoDark.webp)
+## 🚀 About
 
+GojoTech is dedicated to empowering businesses across Ethiopia with innovative e-commerce solutions. Our platform connects buyers and sellers nationwide, providing secure payment processing, logistics support, and comprehensive business tools.
 
-## Tools
-- TailwindCSS v4
-- AstroJs v5
+## 🛠️ Tech Stack
 
+- **Framework**: Astro.js
+- **Styling**: Tailwind CSS
+- **Language**: TypeScript
+- **Deployment**: Static site generation
 
-## 🚀 Project Structure
+## 📦 Features
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Responsive Design**: Works seamlessly across desktop and mobile devices
+- **Dark/Light Mode**: Toggle between themes for better user experience
+- **SEO Optimized**: Built with proper meta tags and structured data
+- **Modern UI**: Clean, professional design with GojoTech branding
+- **Fast Performance**: Optimized for speed and accessibility
 
-```
-/
-├── public/
-│   ├── images/
-│   ├── logos/*
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   ├── blocks/*
-│   │   ├── cards/*
-│   │   ├── elements/*
-│   │   ├── sections/*
-│   │   ├── shared/*
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-│   └── styles/
-│       └── global.css
-└── package.json
-```
+## 🎨 Brand Colors
 
+- **Primary**: #009688 (Teal)
+- **Accent**: #f9a825 (Amber)
+- **Font**: Inter (primary), Raleway (fallback)
 
-## 🧞 Commands
+## 📱 Products
 
-All commands are run from the root of the project, from a terminal:
+- **GojoShop**: E-commerce platform for buyers
+- **GojoSeller**: Mobile app for sellers
+- **Payment Solutions**: Secure digital payments
+- **Logistics**: End-to-end delivery services
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:4321`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
+## 🚀 Getting Started
+
+1. **Clone the repository**
+   ```bash
+   git clone [repository-url]
+   cd gojotech-website
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+## 📄 Pages & Sections
+
+- **Hero**: Main landing with app download buttons
+- **Services**: Product showcase (GojoShop, GojoSeller, etc.)
+- **About**: Company mission and vision
+- **Features**: Platform capabilities and benefits
+- **CTA**: Call-to-action for app downloads
+
+## 🔧 Configuration
+
+The site uses Astro.js with Tailwind CSS. Key configuration files:
+
+- `astro.config.mjs`: Astro configuration
+- `src/styles/global.css`: Global styles and theme variables
+- `src/utils/data.ts`: Content data for services and features
+
+## 📞 Contact
+
+- **Email**: info@gojotech.et
+- **Manual**: https://manual.gojotech.et
+- **Admin Portal**: https://admin.gojotech.et
+
+## 📄 License
+
+This project is proprietary to GojoTech PLC. All rights reserved.
+
+---
+
+Built with ❤️ by GojoTech Team
 
 

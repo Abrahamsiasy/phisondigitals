@@ -1,12 +1,14 @@
 ---
 import Footer from "../components/elements/Footer.astro";
 import Navbar from "../components/elements/Navbar.astro";
+import "../styles/global.css";
 
 export interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = "GojoTech PLC - A dynamic tech company founded in 2024, revolutionizing business operations in Ethiopia through innovative technological solutions, foreign consulting, and custom software development." } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -16,10 +18,62 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="AgenceX - SEO Agency website landing page made with ASTROJS and TAILWINDCSS">
-    <title>AgenceX - {title}</title>
+    <meta name="description" content={description}>
+    <title>GojoTech PLC - {title}</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="Ethiopia, technology, consulting, software development, e-commerce, GojoTech, GojoShop, foreign consulting, custom software, OJS support" />
+    <meta name="author" content="GojoTech PLC" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="geo.region" content="ET" />
+    <meta name="geo.placename" content="Addis Ababa, Ethiopia" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gojotech.et/" />
+    <meta property="og:title" content="GojoTech PLC - {title}" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://gojotech.et/og-image.jpg" />
+    <meta property="og:site_name" content="GojoTech PLC" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://gojotech.et/" />
+    <meta property="twitter:title" content="GojoTech PLC - {title}" />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="https://gojotech.et/og-image.jpg" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "GojoTech PLC",
+      "url": "https://gojotech.et",
+      "logo": "https://gojotech.et/logo.png",
+      "description": "Ethiopia's premier technology company specializing in foreign consulting, custom software development, and e-commerce solutions.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ET",
+        "addressLocality": "Addis Ababa"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+251-982-808-182",
+        "contactType": "customer service",
+        "email": "info@gojotech.et"
+      },
+      "sameAs": [
+        "https://facebook.com/gojotech",
+        "https://linkedin.com/company/gojotech"
+      ]
+    }
+    </script>
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -29,98 +83,130 @@ const { title } = Astro.props;
     <Footer />
   </body>
   <script>
-    const switchTheme = document.querySelector(
-      "[data-switch-theme]"
-    ) as HTMLButtonElement;
+    // Theme switching with error handling
+    try {
+      const switchTheme = document.querySelector(
+        "[data-switch-theme]"
+      ) as HTMLButtonElement;
 
-    if (
-      localStorage.getItem("appTheme") === "dark" ||
-      (!("appTheme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    if (switchTheme) {
-      switchTheme.addEventListener("click", (e) => {
-        e.preventDefault();
-        const doc = document.documentElement;
-        if (doc) {
-          if (localStorage.getItem("appTheme")) {
-            if (localStorage.getItem("appTheme") === "light") {
-              doc.classList.add("dark");
-              localStorage.setItem("appTheme", "dark");
+      if (
+        localStorage.getItem("appTheme") === "dark" ||
+        (!("appTheme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+      
+      if (switchTheme) {
+        switchTheme.addEventListener("click", (e) => {
+          e.preventDefault();
+          const doc = document.documentElement;
+          if (doc) {
+            if (localStorage.getItem("appTheme")) {
+              if (localStorage.getItem("appTheme") === "light") {
+                doc.classList.add("dark");
+                localStorage.setItem("appTheme", "dark");
+              } else {
+                document.documentElement.classList.remove("dark");
+                localStorage.setItem("appTheme", "light");
+              }
             } else {
-              document.documentElement.classList.remove("dark");
-              localStorage.setItem("appTheme", "light");
-            }
-          } else {
-            if (doc.classList.contains("dark")) {
-              doc.classList.remove("dark");
-              localStorage.setItem("appTheme", "light");
-            } else {
-              doc.classList.add("dark");
-              localStorage.setItem("appTheme", "dark");
+              if (doc.classList.contains("dark")) {
+                doc.classList.remove("dark");
+                localStorage.setItem("appTheme", "light");
+              } else {
+                doc.classList.add("dark");
+                localStorage.setItem("appTheme", "dark");
+              }
             }
           }
-        }
-      });
+        });
+      }
+    } catch (error) {
+      console.error('Theme switching failed:', error);
     }
   </script>
   <script>
-    const toggleMenu = document.querySelector(
-      "[data-toggle-nav]"
-    ) as HTMLButtonElement;
-    const navbar = document.querySelector("[data-navbar]") as HTMLDivElement;
-    const overlayNav = document.querySelector(
-      "[data-nav-overlay]"
-    ) as HTMLDivElement;
-    if (toggleMenu) {
-      toggleMenu.addEventListener("click", e => {
-        e.preventDefault();
-        if (toggleMenu.getAttribute("data-open-nav") === "false") {
-          toggleMenu.setAttribute("data-open-nav", "true");
-          overlayNav.setAttribute("data-is-visible", "true");
-          document.body.classList.add("!overflow-y-hidden");
-		  navbar.style.height = `${navbar.scrollHeight}px`
+    // Navigation with error handling
+    try {
+      const toggleMenu = document.querySelector(
+        "[data-toggle-nav]"
+      ) as HTMLButtonElement;
+      const navbar = document.querySelector("[data-navbar]") as HTMLDivElement;
+      const overlayNav = document.querySelector(
+        "[data-nav-overlay]"
+      ) as HTMLDivElement;
+      
+      if (toggleMenu && navbar && overlayNav) {
+        toggleMenu.addEventListener("click", e => {
+          e.preventDefault();
+          if (toggleMenu.getAttribute("data-open-nav") === "false") {
+            toggleMenu.setAttribute("data-open-nav", "true");
+            overlayNav.setAttribute("data-is-visible", "true");
+            document.body.classList.add("!overflow-y-hidden");
+            navbar.style.height = `${navbar.scrollHeight}px`
+          } else {
+            toggleMenu.setAttribute("data-open-nav", "false");
+            overlayNav.setAttribute("data-is-visible", "false");
+            document.body.classList.remove("!overflow-y-hidden");
+            navbar.style.height = "0px"
+          }
+        });
 
-        }else{
-			toggleMenu.setAttribute("data-open-nav", "false");
-        	overlayNav.setAttribute("data-is-visible", "false");
-        	document.body.classList.remove("!overflow-y-hidden");
-		  	navbar.style.height = "0px"
-		}
-		
-        
+        navbar.addEventListener("click", () => {
+          toggleMenu.setAttribute("data-open-nav", "false");
+          overlayNav.setAttribute("data-is-visible", "false");
+          document.body.classList.remove("!overflow-y-hidden");
+          navbar.style.height = "0px"
+        });
+
+        overlayNav.addEventListener("click", () => {
+          toggleMenu.setAttribute("data-open-nav", "false");
+          overlayNav.setAttribute("data-is-visible", "false");
+          document.body.classList.remove("!overflow-y-hidden");
+          navbar.style.height = "0px"
+        });
+      }
+    } catch (error) {
+      console.error('Navigation initialization failed:', error);
+    }
+  </script>
+  <script>
+    // Image optimization and lazy loading
+    try {
+      const images = document.querySelectorAll('img[loading="lazy"]');
+      
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target as HTMLImageElement;
+            img.classList.add('loaded');
+            observer.unobserve(img);
+          }
+        });
       });
 
-      navbar.addEventListener("click", () => {
-        toggleMenu.setAttribute("data-open-nav", "false");
-        overlayNav.setAttribute("data-is-visible", "false");
-        document.body.classList.remove("!overflow-y-hidden");
-		  	navbar.style.height = "0px"
+      images.forEach(img => {
+        imageObserver.observe(img);
       });
-
-      overlayNav.addEventListener("click", () => {
-        toggleMenu.setAttribute("data-open-nav", "false");
-        	overlayNav.setAttribute("data-is-visible", "false");
-        	document.body.classList.remove("!overflow-y-hidden");
-		  	navbar.style.height = "0px"
-      });
+    } catch (error) {
+      console.error('Image optimization failed:', error);
     }
   </script>
 </html>
 <style is:global>
+  /* Consolidated CSS variables - moved from global.css to avoid duplication */
   :root {
     --color-bg: 255 255 255;
     --color-border: 255 255 255;
     --color-box: 255 255 255;
     --box-border: 229 231 235;
     --box-sd: 226 232 240 / 0.5;
-	--heading-1:  23 37 84;
-	--heading-2: 31 41 55;
-	--heading-3: 55 65 81;
+    --heading-1: 23 37 84;
+    --heading-2: 31 41 55;
+    --heading-3: 55 65 81;
   }
 
   .dark {
@@ -128,18 +214,16 @@ const { title } = Astro.props;
     --color-box: 17 24 39;
     --box-border: 243 244 246/0.1;
     --box-sd: transparent;
-
-	
-	--heading-1:  255 255 255;
-	--heading-2:  243 244 246;
-	--heading-3:  209 213 219;
+    --heading-1: 255 255 255;
+    --heading-2: 243 244 246;
+    --heading-3: 209 213 219;
   }
 
   html{
     scroll-behavior: smooth;
   }
   body {
-    font-family: "Raleway", sans-serif;
+    font-family: "Inter", "Raleway", sans-serif;
   }
 
   [data-toggle-nav][data-open-nav="true"] #line1 {
@@ -153,7 +237,6 @@ const { title } = Astro.props;
     transform: translateY(-0.375rem) rotate(-40deg);
   }
 
-  
   [data-nav-overlay][data-is-visible="true"] {
     visibility: visible;
     display: flex;
