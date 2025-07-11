@@ -9,7 +9,7 @@ const navItems = [
         text:"Home"
     },
     {
-        href:"#services",
+        href:"/",
         text:"Services",
         dropdown: [
             { href: "/services/foreign-consulting", text: "Foreign Consulting" },
@@ -21,11 +21,11 @@ const navItems = [
         ]
     },
     {
-        href:"#about-us",
+        href:"/#about-us",
         text:"About"
     },
     {
-        href:"#features",
+        href:"/#features",
         text:"Features"
     },
 ]
@@ -106,7 +106,7 @@ const navItems = [
                 
                 <!-- CTA Button -->
                 <a 
-                    href="#cta" 
+                    href="/#cta" 
                     class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#022E01] to-[#1a5d1a] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 hover:translate-y-[-2px] transition-all duration-300"
                 >
                     <span>Get Consultation</span>
@@ -135,8 +135,7 @@ const navItems = [
                 
                 <!-- Mobile Menu Button -->
                 <button 
-                    data-toggle-nav 
-                    data-open-nav="false" 
+                    id="mobile-menu-btn"
                     class="lg:hidden relative p-2 text-gray-700 dark:text-gray-300 hover:text-[#022E01] dark:hover:text-[#4ade80] rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 group"
                 >
                     <div class="absolute inset-0 bg-gradient-to-r from-[#022E01] to-[#4ade80] rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
@@ -152,10 +151,10 @@ const navItems = [
     </Container>
 
     <!-- Mobile Navigation Overlay -->
-    <div data-nav-overlay aria-hidden="true" class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 invisible transition-all duration-300 lg:hidden"></div>
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 invisible transition-all duration-300 lg:hidden z-40"></div>
     
     <!-- Mobile Navigation Menu -->
-    <div data-navbar class="fixed top-0 right-0 w-80 h-full bg-white dark:bg-gray-900 shadow-2xl transform translate-x-full transition-transform duration-300 ease-out lg:hidden">
+    <div id="mobile-menu" class="fixed top-0 right-0 w-80 h-full bg-white dark:bg-gray-900 shadow-2xl transform translate-x-full transition-transform duration-300 ease-out lg:hidden z-50">
         <div class="flex flex-col h-full">
             <!-- Mobile Header -->
             <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
@@ -163,7 +162,7 @@ const navItems = [
                     <div class="w-8 h-8 bg-gradient-to-br from-[#022E01] to-[#4ade80] rounded-xl"></div>
                     <span class="text-lg font-bold text-gray-900 dark:text-white">Menu</span>
                 </div>
-                <button data-toggle-nav class="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                <button id="close-mobile-menu" class="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
@@ -171,19 +170,19 @@ const navItems = [
             </div>
             
             <!-- Mobile Navigation Items -->
-            <div class="flex-1 p-6">
+            <div class="flex-1 p-6 overflow-y-auto">
                 <ul class="space-y-4">
                     {navItems.map(item => {
                         if (item.dropdown) {
                             return (
                                 <li class="mobile-dropdown">
-                                    <button class="flex items-center justify-between w-full p-4 text-left text-gray-700 dark:text-gray-300 hover:text-[#022E01] dark:hover:text-[#4ade80] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-all duration-300">
+                                    <button class="mobile-dropdown-btn flex items-center justify-between w-full p-4 text-left text-gray-700 dark:text-gray-300 hover:text-[#022E01] dark:hover:text-[#4ade80] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-all duration-300">
                                         <span class="font-medium">{item.text}</span>
                                         <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                         </svg>
                                     </button>
-                                    <div class="mobile-dropdown-content hidden pl-4 space-y-2">
+                                    <div class="mobile-dropdown-content hidden pl-4 space-y-2 mt-2">
                                         {item.dropdown.map(dropdownItem => (
                                             <a 
                                                 href={dropdownItem.href} 
@@ -214,7 +213,7 @@ const navItems = [
             <!-- Mobile CTA -->
             <div class="p-6 border-t border-gray-200 dark:border-gray-700">
                 <a 
-                    href="#cta" 
+                    href="/#cta" 
                     class="block w-full text-center px-6 py-4 bg-gradient-to-r from-[#022E01] to-[#1a5d1a] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                 >
                     Get Free Consultation
@@ -225,96 +224,111 @@ const navItems = [
 </header>
 
 <script>
-         // Navbar scroll effect
-     document.addEventListener('DOMContentLoaded', function() {
-         const navbar = document.getElementById('navbar');
-         let lastScrollTop = 0;
-         
-         if (navbar) {
-             window.addEventListener('scroll', function() {
-                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                 
-                 if (scrollTop > 100) {
-                     navbar.classList.add('bg-white/95', 'dark:bg-gray-900/95', 'shadow-lg');
-                     navbar.classList.remove('bg-white/80', 'dark:bg-gray-900/80');
-                 } else {
-                     navbar.classList.remove('bg-white/95', 'dark:bg-gray-900/95', 'shadow-lg');
-                     navbar.classList.add('bg-white/80', 'dark:bg-gray-900/80');
-                 }
-                 
-                 lastScrollTop = scrollTop;
-             });
-         }
-         
-         // Mobile menu toggle
-         const toggleBtn = document.querySelector('[data-toggle-nav]');
-         const navbarMenu = document.querySelector('[data-navbar]');
-         const overlay = document.querySelector('[data-nav-overlay]');
-         const line1 = document.getElementById('line1');
-         const line2 = document.getElementById('line2');
-         const line3 = document.getElementById('line3');
-         
-         if (toggleBtn && navbarMenu && overlay && line1 && line2 && line3) {
-             toggleBtn.addEventListener('click', function() {
-                 const isOpen = toggleBtn.getAttribute('data-open-nav') === 'true';
-                 
-                 if (isOpen) {
-                     // Close menu
-                     navbarMenu.classList.remove('translate-x-0');
-                     navbarMenu.classList.add('translate-x-full');
-                     overlay.classList.remove('opacity-100', 'visible');
-                     overlay.classList.add('opacity-0', 'invisible');
-                     toggleBtn.setAttribute('data-open-nav', 'false');
-                     
-                     // Reset hamburger
-                     line1.classList.remove('rotate-45', 'translate-y-2');
-                     line2.classList.remove('opacity-0');
-                     line3.classList.remove('-rotate-45', '-translate-y-2');
-                 } else {
-                     // Open menu
-                     navbarMenu.classList.remove('translate-x-full');
-                     navbarMenu.classList.add('translate-x-0');
-                     overlay.classList.remove('opacity-0', 'invisible');
-                     overlay.classList.add('opacity-100', 'visible');
-                     toggleBtn.setAttribute('data-open-nav', 'true');
-                     
-                     // Animate hamburger
-                     line1.classList.add('rotate-45', 'translate-y-2');
-                     line2.classList.add('opacity-0');
-                     line3.classList.add('-rotate-45', '-translate-y-2');
-                 }
-             });
-             
-             // Close menu when clicking overlay
-             overlay.addEventListener('click', function() {
-                 navbarMenu.classList.remove('translate-x-0');
-                 navbarMenu.classList.add('translate-x-full');
-                 overlay.classList.remove('opacity-100', 'visible');
-                 overlay.classList.add('opacity-0', 'invisible');
-                 toggleBtn.setAttribute('data-open-nav', 'false');
-                 
-                 // Reset hamburger
-                 line1.classList.remove('rotate-45', 'translate-y-2');
-                 line2.classList.remove('opacity-0');
-                 line3.classList.remove('-rotate-45', '-translate-y-2');
-             });
-         }
+    document.addEventListener('DOMContentLoaded', function() {
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        let lastScrollTop = 0;
         
-                 // Mobile dropdown functionality
-         const mobileDropdowns = document.querySelectorAll('.mobile-dropdown button');
-         mobileDropdowns.forEach((button: Element) => {
-             button.addEventListener('click', function(this: Element) {
-                 const dropdown = this.nextElementSibling as HTMLElement;
-                 const icon = this.querySelector('svg') as SVGElement;
-                 
-                 if (dropdown && dropdown.classList.contains('hidden')) {
-                     dropdown.classList.remove('hidden');
-                     if (icon) icon.classList.add('rotate-180');
-                 } else if (dropdown) {
-                     dropdown.classList.add('hidden');
-                     if (icon) icon.classList.remove('rotate-180');
-                 }
-             });
-         });
+        if (navbar) {
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 100) {
+                    navbar.classList.add('bg-white/95', 'dark:bg-gray-900/95', 'shadow-lg');
+                    navbar.classList.remove('bg-white/80', 'dark:bg-gray-900/80');
+                } else {
+                    navbar.classList.remove('bg-white/95', 'dark:bg-gray-900/95', 'shadow-lg');
+                    navbar.classList.add('bg-white/80', 'dark:bg-gray-900/80');
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+        }
+        
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+        const line1 = document.getElementById('line1');
+        const line2 = document.getElementById('line2');
+        const line3 = document.getElementById('line3');
+        
+        function openMobileMenu() {
+            if (mobileMenu && mobileOverlay && line1 && line2 && line3) {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+                mobileOverlay.classList.remove('opacity-0', 'invisible');
+                mobileOverlay.classList.add('opacity-100', 'visible');
+                
+                // Animate hamburger
+                line1.classList.add('rotate-45', 'translate-y-2');
+                line2.classList.add('opacity-0');
+                line3.classList.add('-rotate-45', '-translate-y-2');
+                
+                // Prevent body scroll
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeMobileMenuFunc() {
+            if (mobileMenu && mobileOverlay && line1 && line2 && line3) {
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('translate-x-full');
+                mobileOverlay.classList.remove('opacity-100', 'visible');
+                mobileOverlay.classList.add('opacity-0', 'invisible');
+                
+                // Reset hamburger
+                line1.classList.remove('rotate-45', 'translate-y-2');
+                line2.classList.remove('opacity-0');
+                line3.classList.remove('-rotate-45', '-translate-y-2');
+                
+                // Restore body scroll
+                document.body.style.overflow = '';
+            }
+        }
+        
+        // Event listeners
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', openMobileMenu);
+        }
+        
+        if (closeMobileMenu) {
+            closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+        }
+        
+        if (mobileOverlay) {
+            mobileOverlay.addEventListener('click', closeMobileMenuFunc);
+        }
+        
+        // Close menu when clicking on navigation links
+        const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenuFunc);
+        });
+        
+        // Mobile dropdown functionality
+        const mobileDropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+        mobileDropdownBtns.forEach(button => {
+            button.addEventListener('click', function(this: Element) {
+                const dropdown = this.nextElementSibling as HTMLElement;
+                const icon = this.querySelector('svg') as SVGElement;
+                
+                if (dropdown && dropdown.classList.contains('hidden')) {
+                    dropdown.classList.remove('hidden');
+                    if (icon) icon.classList.add('rotate-180');
+                } else if (dropdown) {
+                    dropdown.classList.add('hidden');
+                    if (icon) icon.classList.remove('rotate-180');
+                }
+            });
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeMobileMenuFunc();
+            }
+        });
     });
 </script>
