@@ -10,11 +10,12 @@ import Paragraph from "../shared/Paragraph.astro";
             <!-- Logo and Company Info -->
             <div class="flex items-center gap-3">
                 <a href="/" class="relative flex items-center gap-3">
-                    <div class="relative w-8 h-8 overflow-auto flex rounded-xl bg-primary">
-                        <span class="absolute w-4 h-4 -top-1 -right-1 bg-[#f9a825] rounded-md rotate-45"></span>
-                        <span class="absolute w-4 h-4 -bottom-1 -right-1 bg-[#f9a825] rounded-md rotate-45"></span>
-                        <span class="absolute w-4 h-4 -bottom-1 -left-1 bg-primary rounded-md rotate-45"></span>
-                        <span class="absolute w-2 h-2 rounded-full bg-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></span>
+                    <div class="relative w-8 h-8 overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-lg p-1">
+                        <img 
+                            src="/logos/gojo-logo.ico" 
+                            alt="GojoTech Logo" 
+                            class="w-full h-full object-contain"
+                        />
                     </div>
                     <div class="inline-flex text-xl font-bold text-heading-1">
                         GojoTech
