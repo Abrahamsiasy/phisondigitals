@@ -1,0 +1,233 @@
+---
+import Container from "../shared/Container.astro";
+import Title from "../shared/Title.astro";
+import Paragraph from "../shared/Paragraph.astro";
+import { portfolio } from "../../utils/data.ts";
+---
+
+<section id="portfolio" class="py-20 md:py-24 bg-box-bg">
+    <Container>
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <Title className="mb-4">
+                Our Previous Work
+            </Title>
+            <Paragraph className="text-lg">
+                Discover our portfolio of successful projects and platforms that have transformed businesses and academic institutions. 
+                From e-commerce platforms to academic publishing systems, we deliver innovative solutions that drive results.
+            </Paragraph>
+        </div>
+
+        <!-- Featured Projects -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-12">Featured Projects</h2>
+            <div class="grid lg:grid-cols-2 gap-8">
+                {portfolio.filter(project => project.featured).map((project) => (
+                    <div class="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border border-gray-200 dark:border-gray-700">
+                        <!-- Project Image -->
+                        <div class="relative h-64 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-24 h-24 text-gray-400 mx-auto mb-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                                    </svg>
+                                    <p class="text-sm text-gray-500">Project Screenshot</p>
+                                </div>
+                            </div>
+                            <!-- Category Badge -->
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-gradient-to-r from-[#022E01] to-[#4ade80] text-white text-xs font-bold rounded-full">
+                                    {project.category}
+                                </span>
+                            </div>
+                            <!-- Live Badge -->
+                            {project.liveUrl && (
+                                <div class="absolute top-4 right-4">
+                                    <span class="px-3 py-1 bg-green-500 text-white text-xs font-bold rounded-full flex items-center gap-1">
+                                        <span class="w-2 h-2 bg-white rounded-full"></span>
+                                        Live
+                                    </span>
+                                </div>
+                            )}
+                        </div>
+
+                        <!-- Project Content -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-[#022E01] dark:group-hover:text-[#4ade80] transition-colors duration-300">
+                                {project.title}
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                                {project.description}
+                            </p>
+
+                            <!-- Technologies -->
+                            <div class="mb-4">
+                                <div class="flex flex-wrap gap-2">
+                                    {project.technologies.map((tech) => (
+                                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <!-- Stats -->
+                            <div class="grid grid-cols-3 gap-4 mb-6">
+                                {Object.entries(project.stats).map(([key, value]) => (
+                                    <div class="text-center">
+                                        <div class="text-lg font-bold text-[#022E01] dark:text-[#4ade80]">{value}</div>
+                                        <div class="text-xs text-gray-500 dark:text-gray-400 capitalize">{key}</div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="flex gap-3">
+                                <a 
+                                    href={project.link}
+                                    class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-[#022E01] to-[#4ade80] text-white font-bold rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-sm"
+                                >
+                                    <span>Learn More</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                                {project.liveUrl && (
+                                    <a 
+                                        href={project.liveUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="inline-flex items-center justify-center gap-2 px-4 py-2 border-2 border-[#022E01] dark:border-[#4ade80] text-[#022E01] dark:text-[#4ade80] font-bold rounded-lg hover:bg-[#022E01] hover:text-white dark:hover:bg-[#4ade80] dark:hover:text-gray-900 transition-all duration-300 text-sm"
+                                    >
+                                        <span>View Live</span>
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                        </svg>
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- All Projects Grid -->
+        <div>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-12">All Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {portfolio.map((project) => (
+                    <div class="group bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-gray-200 dark:border-gray-700">
+                        <!-- Project Image -->
+                        <div class="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 text-gray-400 mx-auto mb-2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                                    </svg>
+                                    <p class="text-xs text-gray-500">Project Screenshot</p>
+                                </div>
+                            </div>
+                            <!-- Category Badge -->
+                            <div class="absolute top-3 left-3">
+                                <span class="px-2 py-1 bg-gradient-to-r from-[#022E01] to-[#4ade80] text-white text-xs font-bold rounded-full">
+                                    {project.category}
+                                </span>
+                            </div>
+                            <!-- Live Badge -->
+                            {project.liveUrl && (
+                                <div class="absolute top-3 right-3">
+                                    <span class="px-2 py-1 bg-green-500 text-white text-xs font-bold rounded-full flex items-center gap-1">
+                                        <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+                                        Live
+                                    </span>
+                                </div>
+                            )}
+                        </div>
+
+                        <!-- Project Content -->
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-[#022E01] dark:group-hover:text-[#4ade80] transition-colors duration-300">
+                                {project.title}
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
+                                {project.description}
+                            </p>
+
+                            <!-- Technologies -->
+                            <div class="mb-4">
+                                <div class="flex flex-wrap gap-1">
+                                    {project.technologies.slice(0, 3).map((tech) => (
+                                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                    {project.technologies.length > 3 && (
+                                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded">
+                                            +{project.technologies.length - 3}
+                                        </span>
+                                    )}
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="flex gap-2">
+                                <a 
+                                    href={project.link}
+                                    class="flex-1 inline-flex items-center justify-center gap-1 px-3 py-2 bg-gradient-to-r from-[#022E01] to-[#4ade80] text-white font-bold rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-xs"
+                                >
+                                    <span>Details</span>
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                                {project.liveUrl && (
+                                    <a 
+                                        href={project.liveUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="inline-flex items-center justify-center gap-1 px-3 py-2 border border-[#022E01] dark:border-[#4ade80] text-[#022E01] dark:text-[#4ade80] font-bold rounded-lg hover:bg-[#022E01] hover:text-white dark:hover:bg-[#4ade80] dark:hover:text-gray-900 transition-all duration-300 text-xs"
+                                    >
+                                        <span>View</span>
+                                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                        </svg>
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="text-center mt-16">
+            <div class="bg-gradient-to-r from-[#022E01] to-[#4ade80] rounded-2xl p-8 text-white">
+                <h3 class="text-2xl font-bold mb-4">Ready to Start Your Project?</h3>
+                <p class="text-white/90 mb-6 max-w-2xl mx-auto">
+                    Join our portfolio of successful projects. From e-commerce platforms to academic publishing systems, we deliver innovative solutions that drive results.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a 
+                        href="mailto:info@gojotech.et?subject=Project Discussion"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#022E01] font-bold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                    >
+                        <span>Start Your Project</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                    <a 
+                        href="/services/ojs-support"
+                        class="inline-flex items-center gap-2 px-6 py-3 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-[#022E01] transition-all duration-300"
+                    >
+                        <span>OJS Support Services</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </Container>
+</section> 

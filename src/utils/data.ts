@@ -34,6 +34,12 @@ export const services = [
         description: "Complete e-commerce platform development for Ethiopian businesses. From online stores to marketplace solutions, we help you sell products and services online effectively.",
         icon: "🛒",
         link: "/services/ecommerce-solutions"
+    },
+    {
+        title: "GojoShop.et",
+        description: "Ethiopia's premier e-commerce platform connecting buyers and sellers nationwide. Secure payments, reliable delivery, and comprehensive business tools.",
+        icon: "🛍️",
+        link: "/services/gojoshop"
     }
 ];
 
@@ -67,5 +73,68 @@ export const features = [
         title: "Cost-Effective",
         description: "Competitive pricing tailored for Ethiopian businesses, with flexible payment options and transparent pricing without hidden costs or surprises.",
         icon: "💰"
+    }
+];
+
+export const portfolio = [
+    {
+        title: "GojoShop.et",
+        description: "Ethiopia's premier e-commerce platform serving thousands of buyers and sellers nationwide. Features secure payments, nationwide delivery, and comprehensive seller tools.",
+        category: "E-commerce Platform",
+        image: "/images/gojoshop-preview.webp",
+        link: "/services/gojoshop",
+        liveUrl: "https://gojoshop.et",
+        technologies: ["React", "Node.js", "MongoDB", "AWS"],
+        stats: {
+            sellers: "1000+",
+            products: "50K+",
+            users: "25K+"
+        },
+        featured: true
+    },
+    {
+        title: "Iraqi Journal of Medical Sciences",
+        description: "Professional OJS setup for the College of Medicine, Al-Nahrain University. Features peer-reviewed medical research publishing with comprehensive editorial workflow.",
+        category: "Academic Publishing",
+        image: "/images/iraqijms-preview.webp",
+        link: "/services/ojs-support",
+        liveUrl: "https://ojs.iraqijms.net/index.php",
+        technologies: ["OJS", "PHP", "MySQL", "Linux"],
+        stats: {
+            articles: "100+",
+            issues: "23+",
+            citations: "500+"
+        },
+        featured: true
+    },
+    {
+        title: "Daagu International Journal of Basic and Applied Research",
+        description: "Multidisciplinary peer-reviewed open-access journal platform for scientific research. Features comprehensive submission and review workflow.",
+        category: "Academic Publishing",
+        image: "/images/dagujournal-preview.webp",
+        link: "/services/ojs-support",
+        liveUrl: "https://dagujournal.org/index.php/dijbar",
+        technologies: ["OJS", "PHP", "MySQL", "Apache"],
+        stats: {
+            articles: "50+",
+            issues: "7+",
+            disciplines: "10+"
+        },
+        featured: true
+    },
+    {
+        title: "Journal of Afar-Af and Sociolinguistics",
+        description: "Specialized academic journal platform for linguistic and sociocultural research. Features multilingual support and advanced publishing tools.",
+        category: "Academic Publishing",
+        image: "/images/jaasl-preview.webp",
+        link: "/services/ojs-support",
+        liveUrl: "https://sujaasl.edu.et/index.php/jassl",
+        technologies: ["OJS", "PHP", "MySQL", "Nginx"],
+        stats: {
+            articles: "25+",
+            languages: "3+",
+            researchers: "100+"
+        },
+        featured: false
     }
 ];
