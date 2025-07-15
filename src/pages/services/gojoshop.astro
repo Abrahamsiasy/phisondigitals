@@ -5,7 +5,112 @@ import Title from '../../components/shared/Title.astro';
 import Paragraph from '../../components/shared/Paragraph.astro';
 ---
 
-<Layout title="GojoShop.et - Premier E-commerce Platform" description="GojoShop.et - Ethiopia's leading e-commerce platform. Discover our flagship online marketplace with secure payments, nationwide delivery, and comprehensive seller tools.">
+<Layout 
+    title="GojoShop.et - Premier E-commerce Platform" 
+    description="GojoShop.et - Ethiopia's leading e-commerce platform with 10K+ users. Features customer wallet system, order management, integrated POS, dedicated apps, and Telegram bot. Built with Laravel, MySQL, and Firebase."
+    keywords="GojoShop.et, e-commerce Ethiopia, online shop Ethiopia, customer wallet system, order management system, POS system Ethiopia, Laravel e-commerce, MySQL database, Firebase notifications, mobile app Ethiopia, Telegram bot e-commerce, Ethiopian marketplace, online shopping Ethiopia, digital wallet Ethiopia, payment system Ethiopia ojs, jimmaa, academic journals"
+    canonical="https://gojotech.et/services/gojoshop"
+>
+    <!-- GojoShop.et Specific Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "GojoShop.et",
+      "description": "Ethiopia's premier e-commerce platform serving over 10,000 users with customer wallet system, order management, and integrated POS",
+      "url": "https://gojoshop.et",
+      "applicationCategory": "E-commerce Platform",
+      "operatingSystem": "Web, iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "ETB",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1250",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "GojoTech PLC",
+        "url": "https://gojotech.et"
+      },
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Abraham Sisay",
+          "jobTitle": "Founder & CEO"
+        },
+        {
+          "@type": "Person",
+          "name": "Negusu Sisay",
+          "jobTitle": "Founder & CTO"
+        },
+        {
+          "@type": "Person",
+          "name": "Samson Tesfaye",
+          "jobTitle": "Founder & COO"
+        }
+      ],
+      "featureList": [
+        "Customer Wallet System",
+        "Order Management & Tracking",
+        "Integrated POS System",
+        "Seller & Buyer Apps",
+        "Telegram Bot Integration",
+        "Real-time Notifications",
+        "Inventory Management",
+        "Analytics Dashboard"
+      ],
+      "softwareVersion": "2.0",
+      "releaseNotes": "Latest version includes enhanced customer wallet system and improved order management",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.gojotech.user",
+      "installUrl": "https://apps.apple.com/us/app/gojo-shop/id6503872198",
+      "screenshot": "https://gojotech.et/images/projects/gojotech_et.jpeg",
+      "softwareRequirements": "Web browser, iOS 14+, Android 8+",
+      "datePublished": "2024-01-01",
+      "dateModified": "2024-12-01"
+    }
+    </script>
+
+    <!-- Product Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "GojoShop.et E-commerce Platform",
+      "description": "Complete e-commerce solution with customer wallet, order management, and POS integration",
+      "brand": {
+        "@type": "Brand",
+        "name": "GojoTech PLC"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "GojoTech PLC"
+      },
+      "category": "E-commerce Software",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "ETB",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "GojoTech PLC"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1250"
+      }
+    }
+    </script>
+
     <main class="pt-32 lg:pt-36">
         <Container>
             <!-- Hero Section -->

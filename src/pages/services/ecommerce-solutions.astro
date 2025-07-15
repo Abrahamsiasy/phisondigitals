@@ -5,7 +5,129 @@ import Title from '../../components/shared/Title.astro';
 import Paragraph from '../../components/shared/Paragraph.astro';
 ---
 
-<Layout title="E-commerce Solutions" description="Professional e-commerce solutions including online store development, payment integration, and digital marketplace platforms. Expert e-commerce services from GojoTech PLC.">
+<Layout 
+    title="E-commerce Solutions" 
+    description="Professional e-commerce solutions including online store development, payment integration, and digital marketplace platforms. Expert e-commerce services from GojoTech PLC featuring GojoShop.et platform with 10K+ users."
+    keywords="e-commerce solutions Ethiopia, online store development, payment integration, digital marketplace, GojoShop.et, customer wallet system, order management, POS integration, Laravel e-commerce, mobile commerce, inventory management, shopping cart, checkout system, Ethiopian e-commerce, Addis Ababa tech company"
+    canonical="https://gojotech.et/services/ecommerce-solutions"
+>
+    <!-- E-commerce Services Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "E-commerce Solutions",
+      "description": "Professional e-commerce solutions including online store development, payment integration, and digital marketplace platforms",
+      "provider": {
+        "@type": "Organization",
+        "name": "GojoTech PLC",
+        "url": "https://gojotech.et"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Ethiopia"
+      },
+      "serviceType": "E-commerce Development",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "E-commerce Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Online Store Development",
+              "description": "Custom e-commerce websites with modern design and functionality"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Payment Gateway Integration",
+              "description": "Secure payment processing with multiple payment options"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Inventory Management",
+              "description": "Advanced inventory and order management systems"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile Commerce",
+              "description": "Mobile-optimized shopping experiences"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Customer Wallet System",
+              "description": "Secure wallet for deposits, withdrawals, and in-app purchases"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "POS Integration",
+              "description": "Seamless in-store and online transaction management"
+            }
+          }
+        ]
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "GojoShop.et Users"
+          },
+          "reviewBody": "Excellent e-commerce platform with 10K+ active users and comprehensive features"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://gojotech.et"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://gojotech.et/#services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "E-commerce Solutions",
+          "item": "https://gojotech.et/services/ecommerce-solutions"
+        }
+      ]
+    }
+    </script>
+
     <main class="pt-32 lg:pt-36">
         <Container>
             <!-- Hero Section -->
@@ -14,7 +136,7 @@ import Paragraph from '../../components/shared/Paragraph.astro';
                     E-commerce Solutions Services
                 </Title>
                 <Paragraph className="mt-8 text-lg">
-                    Professional e-commerce solutions including online store development, payment integration, and digital marketplace platforms for modern businesses.
+                    Professional e-commerce solutions including online store development, customer wallet systems, and digital marketplace platforms. Our flagship platform GojoShop.et serves over 10,000 users nationwide with advanced order management and integrated POS systems.
                 </Paragraph>
             </div>
 
@@ -31,7 +153,7 @@ import Paragraph from '../../components/shared/Paragraph.astro';
                             </div>
                             <div>
                                 <h3 class="font-bold text-gray-900 dark:text-white text-lg">GojoShop.et Platform</h3>
-                                <p class="text-gray-600 dark:text-gray-300 mt-2">Our flagship e-commerce platform serving thousands of buyers and sellers nationwide</p>
+                                <p class="text-gray-600 dark:text-gray-300 mt-2">Our flagship e-commerce platform serving over 10,000 users with customer wallet system, order management, and integrated POS</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4 group">
@@ -89,11 +211,11 @@ import Paragraph from '../../components/shared/Paragraph.astro';
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="w-3 h-3 bg-gradient-to-r from-[#022E01] to-[#4ade80] rounded-full"></span>
-                            Secure payment solutions
+                            Customer wallet system (as seen in GojoShop.et)
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="w-3 h-3 bg-gradient-to-r from-[#022E01] to-[#4ade80] rounded-full"></span>
-                            Mobile-first design
+                            Mobile-first design with dedicated apps
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="w-3 h-3 bg-gradient-to-r from-[#022E01] to-[#4ade80] rounded-full"></span>
@@ -116,21 +238,21 @@ import Paragraph from '../../components/shared/Paragraph.astro';
                 <div class="bg-gradient-to-r from-[#022E01] to-[#4ade80] rounded-2xl p-12 text-white text-center shadow-2xl">
                     <h2 class="text-3xl font-bold mb-6">Our Flagship Platform: GojoShop.et</h2>
                     <Paragraph className="mb-8 text-white/90">
-                        GojoShop.et is Ethiopia's premier e-commerce platform, serving thousands of buyers and sellers nationwide. 
-                        Built with cutting-edge technology and deep understanding of the Ethiopian market.
+                        GojoShop.et is Ethiopia's premier e-commerce platform, serving over 10,000 users nationwide. 
+                        Features customer wallet system, advanced order management, integrated POS, dedicated seller and buyer apps, and Telegram bot integration.
                     </Paragraph>
                     <div class="grid md:grid-cols-3 gap-6 mb-8">
                         <div class="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition-all duration-300">
-                            <h3 class="text-xl font-bold mb-3">1000+ Active Sellers</h3>
-                            <p class="text-white/80">Growing community of verified sellers across Ethiopia</p>
+                            <h3 class="text-xl font-bold mb-3">10K+ Active Users</h3>
+                            <p class="text-white/80">Growing community of buyers and sellers across Ethiopia</p>
                         </div>
                         <div class="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition-all duration-300">
-                            <h3 class="text-xl font-bold mb-3">50K+ Products</h3>
-                            <p class="text-white/80">Wide variety of products from electronics to fashion</p>
+                            <h3 class="text-xl font-bold mb-3">Customer Wallet System</h3>
+                            <p class="text-white/80">Secure wallet for deposits, withdrawals, and in-app purchases</p>
                         </div>
                         <div class="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition-all duration-300">
-                            <h3 class="text-xl font-bold mb-3">Nationwide Delivery</h3>
-                            <p class="text-white/80">Reliable delivery network covering major cities and towns</p>
+                            <h3 class="text-xl font-bold mb-3">Integrated POS</h3>
+                            <p class="text-white/80">Seamless in-store and online transaction management</p>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">

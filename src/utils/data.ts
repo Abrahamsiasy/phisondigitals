@@ -35,12 +35,7 @@ export const services = [
         icon: "🛒",
         link: "/services/ecommerce-solutions"
     },
-    {
-        title: "GojoShop.et",
-        description: "Ethiopia's premier e-commerce platform connecting buyers and sellers nationwide. Secure payments, reliable delivery, and comprehensive business tools.",
-        icon: "🛍️",
-        link: "/services/gojoshop"
-    }
+    
 ];
 
 export const features = [
@@ -79,22 +74,23 @@ export const features = [
 export const portfolio = [
     {
         title: "GojoShop.et",
-        description: "Ethiopia's premier e-commerce platform serving thousands of buyers and sellers nationwide. Features secure payments, nationwide delivery, and comprehensive seller tools.",
+        description: "Ethiopia's premier e-commerce platform serving over 10,000 users nationwide. Features customer wallet system, advanced order management, integrated POS, and dedicated apps for both buyers and sellers with Telegram bot integration.",
         category: "E-commerce Platform",
         image: "/images/projects/gojotech_et.jpeg",
         link: "/services/gojoshop",
         liveUrl: "https://gojoshop.et",
-        technologies: ["React", "Node.js", "MongoDB", "AWS"],
+        technologies: ["Laravel", "MySQL", "Firebase", "React"],
         stats: {
-            sellers: "1000+",
-            products: "50K+",
-            users: "25K+"
+            users: "10K+",
+            sellers: "1,000+",
+            modules: "8+"
         },
+        completionDate: "2024",
         featured: true
     },
     {
         title: "Iraqi Journal of Medical Sciences",
-        description: "Professional OJS setup for the College of Medicine, Al-Nahrain University. Features peer-reviewed medical research publishing with comprehensive editorial workflow.",
+        description: "Professional OJS setup for the College of Medicine, Al-Nahrain University. Features peer-reviewed medical research publishing with comprehensive editorial workflow and advanced submission management.",
         category: "Academic Publishing",
         image: "/images/projects/Iraqi_Journal_of_Medical_Sciences-min.png",
         link: "/services/ojs-support",
@@ -105,11 +101,12 @@ export const portfolio = [
             issues: "23+",
             citations: "500+"
         },
+        completionDate: "2023",
         featured: true
     },
     {
         title: "Daagu International Journal of Basic and Applied Research",
-        description: "Multidisciplinary peer-reviewed open-access journal platform for scientific research. Features comprehensive submission and review workflow.",
+        description: "Multidisciplinary peer-reviewed open-access journal platform for scientific research. Features comprehensive submission and review workflow with advanced publishing tools.",
         category: "Academic Publishing",
         image: "/images/projects/Daagu International Journal_of_Basic_and_Applied_Research.png",
         link: "/services/ojs-support",
@@ -120,21 +117,7 @@ export const portfolio = [
             issues: "7+",
             disciplines: "10+"
         },
+        completionDate: "2023",
         featured: true
-    },
-    {
-        title: "Journal of Afar-Af and Sociolinguistics",
-        description: "Specialized academic journal platform for linguistic and sociocultural research. Features multilingual support and advanced publishing tools.",
-        category: "Academic Publishing",
-        image: "/images/projects/Journal_of_Afar-Af_and_Sociolinguistics.jpeg",
-        link: "/services/ojs-support",
-        liveUrl: "https://sujaasl.edu.et/index.php/jassl",
-        technologies: ["OJS", "PHP", "MySQL", "Nginx"],
-        stats: {
-            articles: "25+",
-            languages: "3+",
-            researchers: "100+"
-        },
-        featured: false
     }
 ];

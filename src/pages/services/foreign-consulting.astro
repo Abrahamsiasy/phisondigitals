@@ -5,7 +5,129 @@ import Title from '../../components/shared/Title.astro';
 import Paragraph from '../../components/shared/Paragraph.astro';
 ---
 
-<Layout title="Foreign Consulting" description="Expert foreign consulting services for international business expansion, market entry, and global partnerships. Professional consulting from GojoTech PLC.">
+<Layout 
+    title="Foreign Consulting" 
+    description="Expert foreign consulting services for international business expansion, market entry, and global partnerships in Ethiopia. Professional consulting from GojoTech PLC founded by Abraham Sisay, Negusu Sisay, and Samson Tesfaye."
+    keywords="foreign consulting Ethiopia, international business expansion, market entry Ethiopia, global partnerships, business consulting Addis Ababa, Abraham Sisay, Negusu Sisay, Samson Tesfaye, East Africa consulting, investment guidance Ethiopia, regulatory compliance Ethiopia, business development Ethiopia"
+    canonical="https://gojotech.et/services/foreign-consulting"
+>
+    <!-- Foreign Consulting Services Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Foreign Consulting Services",
+      "description": "Expert guidance for international business expansion, market entry strategies, and global partnership development in Ethiopia",
+      "provider": {
+        "@type": "Organization",
+        "name": "GojoTech PLC",
+        "url": "https://gojotech.et"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Ethiopia"
+      },
+      "serviceType": "Business Consulting",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Foreign Consulting Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Market Research & Analysis",
+              "description": "Comprehensive market research and competitive analysis for target markets in Ethiopia"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Business Model Development",
+              "description": "Customized business models and validation strategies for Ethiopian market"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Regulatory Compliance",
+              "description": "Guidance on legal requirements and regulatory compliance in Ethiopia"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Partnership Development",
+              "description": "Strategic partnership and network development in East Africa"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Risk Assessment",
+              "description": "Comprehensive risk assessment and mitigation strategies"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Cultural Adaptation",
+              "description": "Cultural adaptation strategies for international markets in Ethiopia"
+            }
+          }
+        ]
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "International Business Clients"
+          },
+          "reviewBody": "Excellent foreign consulting services with deep understanding of Ethiopian market and regulatory environment"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://gojotech.et"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://gojotech.et/#services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Foreign Consulting",
+          "item": "https://gojotech.et/services/foreign-consulting"
+        }
+      ]
+    }
+    </script>
+
     <main class="pt-32 lg:pt-36">
         <Container>
             <!-- Hero Section -->

@@ -10,9 +10,109 @@ import CTA from "../components/sections/CTA.astro";
 import ByNumber from "../components/sections/ByNumber.astro";
 ---
 
-<Layout title="Home">
+<Layout 
+    title="Home"
+    description="GojoTech PLC - Ethiopia's premier technology company founded by Abraham Sisay, Negusu Sisay, and Samson Tesfaye. Specializing in e-commerce solutions, online shop development, GojoShop.et platform, foreign consulting, and custom software development in Addis Ababa, Ethiopia."
+    keywords="e-commerce Ethiopia, online shop development, GojoTech, Abraham Sisay, Negusu Sisay, Samson Tesfaye, GojoShop.et, customer wallet system, order management, POS system, Laravel development, MySQL, Firebase, foreign consulting Ethiopia, software development Addis Ababa, Ethiopian tech company, academic publishing OJS, mobile app development Ethiopia"
+    canonical="https://gojotech.et/"
+>
     <!-- Skip link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Additional Homepage SEO Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "GojoTech PLC",
+      "url": "https://gojotech.et",
+      "description": "Ethiopia's premier technology company specializing in e-commerce solutions and software development",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://gojotech.et/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "GojoTech PLC",
+        "founder": [
+          {
+            "@type": "Person",
+            "name": "Abraham Sisay",
+            "jobTitle": "Founder & CEO"
+          },
+          {
+            "@type": "Person",
+            "name": "Negusu Sisay",
+            "jobTitle": "Founder & CTO"
+          },
+          {
+            "@type": "Person",
+            "name": "Samson Tesfaye",
+            "jobTitle": "Founder & COO"
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What e-commerce solutions does GojoTech offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GojoTech offers comprehensive e-commerce solutions including GojoShop.et platform, customer wallet systems, order management, integrated POS, and custom online shop development."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who are the founders of GojoTech?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GojoTech was founded by Abraham Sisay (CEO), Negusu Sisay (CTO), and Samson Tesfaye (COO) in 2024."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What technology stack does GojoShop.et use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GojoShop.et is built with Laravel, MySQL, Firebase, and React, featuring customer wallet system, order management, and integrated POS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is GojoTech located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GojoTech is located in Addis Ababa, Ethiopia, serving clients nationwide and internationally."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://gojotech.et"
+        }
+      ]
+    }
+    </script>
     
     <main id="main-content">
         <Hero />
