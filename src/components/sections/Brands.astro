@@ -2,52 +2,102 @@
 import Container from "../shared/Container.astro";
 import Title from "../shared/Title.astro";
 
+const companies = [
+    {
+        name: "Debbal",
+        logo: "/images/companies/debbal.svg",
+        url: "https://example.com/debbal",
+    },
+    {
+        name: "GojShop",
+        logo: "/images/companies/gojshop.svg",
+        url: "https://example.com/gojshop",
+    },
+    {
+        name: "Bunab",
+        logo: "/images/companies/bunab.svg",
+        url: "https://example.com/bunab",
+    },
+    {
+        name: "Shega Market",
+        logo: "/images/companies/shega.svg",
+        url: "https://example.com/shega",
+    },
+];
 ---
 
-<section>
-    <Container className="space-y-8">
+<section id="partners" class="py-16 md:py-20 bg-box-bg">
+    <Container className="space-y-10">
         <div class="text-center max-w-3xl mx-auto">
-            <Title>
-                Trusted by companies like
+            <Title className="mb-3">
+                Companies We Have Worked With
             </Title>
+            <p class="text-heading-3">
+                A few sample client brands. This carousel scrolls automatically and each logo links to its company page.
+            </p>
         </div>
-        <div class="flex justify-center flex-wrap gap-4">
-            <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-                <img src="/logos/spotify.png" width="100" height="60" alt="spotify" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
+
+        <div class="logo-marquee group relative overflow-hidden">
+            <div class="logo-track">
+                {companies.map((company) => (
+                    <a href={company.url} target="_blank" rel="noopener noreferrer" class="logo-card" aria-label={`Visit ${company.name}`}>
+                        <img src={company.logo} alt={`${company.name} logo`} loading="lazy" width="180" height="80" class="h-10 w-auto" />
+                    </a>
+                ))}
+                {companies.map((company) => (
+                    <a href={company.url} target="_blank" rel="noopener noreferrer" class="logo-card" aria-hidden="true" tabindex="-1">
+                        <img src={company.logo} alt="" loading="lazy" width="180" height="80" class="h-10 w-auto" />
+                    </a>
+                ))}
             </div>
-            <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-                <img src="/logos/slack.png" width="100" height="60" alt="slack" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
-            </div>
-            <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-                <img src="/logos/paypallogo.png" width="100" height="60" alt="paypal" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
-            </div>
-            <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-                <img src="/logos/spotify.png" width="100" height="60" alt="spotify" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
-            </div>
-            <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-                <img src="/logos/slack.png" width="100" height="60" alt="slack" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
-            </div>
-            <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-                <img src="/logos/paypallogo.png" width="100" height="60" alt="paypal" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
-            </div>
-            <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-                <img src="/logos/spotify.png" width="100" height="60" alt="spotify" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
-            </div>
-            <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-                <img src="/logos/slack.png" width="100" height="60" alt="slack" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
-            </div>
-            <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-                <img src="/logos/paypallogo.png" width="100" height="60" alt="paypal" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
-            </div>
-            <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-                <img src="/logos/spotify.png" width="100" height="60" alt="spotify" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
-            </div>
-            <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-                <img src="/logos/slack.png" width="100" height="60" alt="slack" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
-            </div>
-            <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-                <img src="/logos/paypallogo.png" width="100" height="60" alt="paypal" class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105">
-            </div>
+
+            <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[rgb(var(--color-bg))] to-transparent"></div>
+            <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[rgb(var(--color-bg))] to-transparent"></div>
         </div>
     </Container>
 </section>
+
+<style>
+    .logo-marquee {
+        mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+    }
+
+    .logo-track {
+        display: flex;
+        gap: 1rem;
+        width: max-content;
+        animation: scrollLogos 24s linear infinite;
+    }
+
+    .group:hover .logo-track {
+        animation-play-state: paused;
+    }
+
+    .logo-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 220px;
+        padding: 1rem 1.25rem;
+        border-radius: 0.9rem;
+        border: 1px solid rgb(var(--box-border));
+        background: rgb(var(--color-box));
+        box-shadow: 0 4px 18px rgba(15, 46, 92, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .logo-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(30, 109, 235, 0.2);
+        border-color: #1e6deb;
+    }
+
+    @keyframes scrollLogos {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(calc(-50% - 0.5rem));
+        }
+    }
+</style>
