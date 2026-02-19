@@ -25,7 +25,7 @@ const { title, description, icon, link } = Astro.props;
         </div>
         
         <div class="flex-1 min-w-0">
-            <Title className="text-xl font-bold mb-4 group-hover:text-[#1E6DEB] dark:group-hover:text-[#EAF2FF] transition-colors duration-300 break-words">
+            <Title as="h3" className="text-xl font-bold mb-4 group-hover:text-[#1E6DEB] dark:group-hover:text-[#EAF2FF] transition-colors duration-300 break-words">
                 {title}
             </Title>
             
@@ -40,7 +40,7 @@ const { title, description, icon, link } = Astro.props;
         <div class="relative z-10 mt-auto pt-4">
             <a 
                 href={link}
-                class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1E6DEB] to-[#1554B3] dark:from-[#1E6DEB] dark:to-[#0F2E5C] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 hover:translate-y-[-2px] transition-all duration-300 ease-out group-hover:from-[#1554B3] group-hover:to-[#1E6DEB] dark:group-hover:from-[#0F2E5C] dark:group-hover:to-[#1E6DEB] relative overflow-hidden"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1E6DEB] to-[#1554B3] dark:bg-none dark:bg-[#1E6DEB] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 hover:translate-y-[-2px] transition-all duration-300 ease-out group-hover:from-[#1554B3] group-hover:to-[#1E6DEB] dark:group-hover:bg-[#1554B3] relative overflow-hidden"
             >
                 <span class="relative z-10">Learn More</span>
                 <svg class="w-4 h-4 relative z-10 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

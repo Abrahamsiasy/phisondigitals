@@ -21,6 +21,90 @@ const fullTitle = `${title} | Phison Digitals`;
 const fullDescription = description;
 const fullKeywords = keywords;
 const canonicalUrl = canonical || Astro.url.href;
+const siteOrigin = new URL(canonicalUrl).origin;
+const socialImageUrl = new URL("/logos/phison-logo.png", siteOrigin).toString();
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Phison Digitals",
+  alternateName: "Phison Digitals",
+  url: siteOrigin,
+  logo: socialImageUrl,
+  description:
+    "Results-driven social media marketing agency delivering strategy, content creation, engagement, and advertising services.",
+  foundingDate: "2022",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "ET",
+    addressLocality: "Addis Ababa",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+251-989-915-436",
+    contactType: "customer service",
+    email: "phisondigitals@gmail.com",
+    availableLanguage: ["English", "Amharic"],
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Social Media Marketing Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Strategy Development",
+          description: "Market research, goal setting, and content planning for social media growth",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Content Creation",
+          description: "Visual and written content designed for engagement and conversion",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Social Media Advertising",
+          description: "Targeted ad campaigns with optimization and performance reporting",
+        },
+      },
+    ],
+  },
+  sameAs: [siteOrigin],
+  areaServed: {
+    "@type": "Country",
+    name: "Ethiopia",
+  },
+  serviceArea: {
+    "@type": "Country",
+    name: "Ethiopia",
+  },
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Phison Digitals",
+  image: socialImageUrl,
+  description: "Professional social media marketing agency",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "ET",
+    addressLocality: "Addis Ababa",
+  },
+  url: siteOrigin,
+  telephone: "+251-989-915-436",
+  priceRange: "$$",
+  openingHours: "Mo-Fr 09:00-18:00",
+  currenciesAccepted: "ETB, USD",
+  paymentAccepted: "Cash, Credit Card, Bank Transfer",
+};
 ---
 
 <!DOCTYPE html>
@@ -52,9 +136,10 @@ const canonicalUrl = canonical || Astro.url.href;
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={fullDescription} />
-    <meta property="og:image" content="https://phisondigitals.com/og-image.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:width" content="640" />
+    <meta property="og:image:height" content="640" />
+    <meta property="og:image:alt" content="Phison Digitals logo" />
     <meta property="og:site_name" content="Phison Digitals" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="am_ET" />
@@ -64,7 +149,7 @@ const canonicalUrl = canonical || Astro.url.href;
     <meta property="twitter:url" content={canonicalUrl} />
     <meta property="twitter:title" content={fullTitle} />
     <meta property="twitter:description" content={fullDescription} />
-    <meta property="twitter:image" content="https://phisondigitals.com/og-image.jpg" />
+    <meta property="twitter:image" content={socialImageUrl} />
     <meta property="twitter:creator" content="@phisondigitals" />
     <meta property="twitter:site" content="@phisondigitals" />
 
@@ -77,95 +162,15 @@ const canonicalUrl = canonical || Astro.url.href;
     <meta name="application-name" content="Phison Digitals" />
     <meta name="msapplication-TileImage" content="/logos/phison-logo.png" />
     <meta name="msapplication-config" content="/browserconfig.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="/logos/phison-logo.png" />
 
     <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Phison Digitals",
-      "alternateName": "Phison Digitals",
-      "url": "https://phisondigitals.com",
-      "logo": "https://phisondigitals.com/logos/phison-logo.png",
-      "description": "Results-driven social media marketing agency delivering strategy, content creation, engagement, and advertising services.",
-      "foundingDate": "2022",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "ET",
-        "addressLocality": "Addis Ababa"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+251-989-915-436",
-        "contactType": "customer service",
-        "email": "phisondigitals@gmail.com",
-        "availableLanguage": ["English", "Amharic"]
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Social Media Marketing Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Strategy Development",
-              "description": "Market research, goal setting, and content planning for social media growth"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Content Creation",
-              "description": "Visual and written content designed for engagement and conversion"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Social Media Advertising",
-              "description": "Targeted ad campaigns with optimization and performance reporting"
-            }
-          }
-        ]
-      },
-      "sameAs": [
-        "https://phisondigitals.com/"
-      ],
-      "areaServed": {
-        "@type": "Country",
-        "name": "Ethiopia"
-      },
-      "serviceArea": {
-        "@type": "Country",
-        "name": "Ethiopia"
-      }
-    }
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
 
     <!-- Local Business Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Phison Digitals",
-      "image": "https://phisondigitals.com/logos/phison-logo.png",
-      "description": "Professional social media marketing agency",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "ET",
-        "addressLocality": "Addis Ababa"
-      },
-      "url": "https://phisondigitals.com",
-      "telephone": "+251-989-915-436",
-      "priceRange": "$$",
-      "openingHours": "Mo-Fr 09:00-18:00",
-      "currenciesAccepted": "ETB, USD",
-      "paymentAccepted": "Cash, Credit Card, Bank Transfer"
-    }
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap"
@@ -223,73 +228,6 @@ const canonicalUrl = canonical || Astro.url.href;
       console.error('Theme switching failed:', error);
     }
   </script>
-  <script>
-    // Navigation with error handling
-    try {
-      const toggleMenu = document.querySelector(
-        "[data-toggle-nav]"
-      ) as HTMLButtonElement;
-      const navbar = document.querySelector("[data-navbar]") as HTMLDivElement;
-      const overlayNav = document.querySelector(
-        "[data-nav-overlay]"
-      ) as HTMLDivElement;
-      
-      if (toggleMenu && navbar && overlayNav) {
-        toggleMenu.addEventListener("click", e => {
-          e.preventDefault();
-          if (toggleMenu.getAttribute("data-open-nav") === "false") {
-            toggleMenu.setAttribute("data-open-nav", "true");
-            overlayNav.setAttribute("data-is-visible", "true");
-            document.body.classList.add("!overflow-y-hidden");
-            navbar.style.height = `${navbar.scrollHeight}px`
-          } else {
-            toggleMenu.setAttribute("data-open-nav", "false");
-            overlayNav.setAttribute("data-is-visible", "false");
-            document.body.classList.remove("!overflow-y-hidden");
-            navbar.style.height = "0px"
-          }
-        });
-
-        navbar.addEventListener("click", () => {
-          toggleMenu.setAttribute("data-open-nav", "false");
-          overlayNav.setAttribute("data-is-visible", "false");
-          document.body.classList.remove("!overflow-y-hidden");
-          navbar.style.height = "0px"
-        });
-
-        overlayNav.addEventListener("click", () => {
-          toggleMenu.setAttribute("data-open-nav", "false");
-          overlayNav.setAttribute("data-is-visible", "false");
-          document.body.classList.remove("!overflow-y-hidden");
-          navbar.style.height = "0px"
-        });
-      }
-    } catch (error) {
-      console.error('Navigation initialization failed:', error);
-    }
-  </script>
-  <script>
-    // Image optimization and lazy loading
-    try {
-      const images = document.querySelectorAll('img[loading="lazy"]');
-      
-      const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target as HTMLImageElement;
-            img.classList.add('loaded');
-            observer.unobserve(img);
-          }
-        });
-      });
-
-      images.forEach(img => {
-        imageObserver.observe(img);
-      });
-    } catch (error) {
-      console.error('Image optimization failed:', error);
-    }
-  </script>
 </html>
 <style is:global>
   /* Consolidated CSS variables - moved from global.css to avoid duplication */
@@ -321,19 +259,4 @@ const canonicalUrl = canonical || Astro.url.href;
     font-family: "Inter", "Raleway", sans-serif;
   }
 
-  [data-toggle-nav][data-open-nav="true"] #line1 {
-    transform: translateY(0.375rem) rotate(40deg);
-  }
-  [data-toggle-nav][data-open-nav="true"] #line2 {
-    transform: scaleX(0);
-    opacity: 0;
-  }
-  [data-toggle-nav][data-open-nav="true"] #line3 {
-    transform: translateY(-0.375rem) rotate(-40deg);
-  }
-
-  [data-nav-overlay][data-is-visible="true"] {
-    visibility: visible;
-    display: flex;
-  }
 </style>

@@ -1,18 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://gojotech.et/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 1
-
-# Disallow admin areas (if any)
-Disallow: /admin/
-Disallow: /private/
-Disallow: /api/
-
-# Allow important pages
-Allow: /services/
-Allow: /images/
-Allow: /logos/ 
+Sitemap: /sitemap-index.xml

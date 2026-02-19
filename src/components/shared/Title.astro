@@ -1,3 +1,13 @@
-<h1 class="text-heading-1 font-semibold text-2xl sm:text-3xl md:text-4xl">
+---
+export interface Props {
+    className?: string;
+    as?: "h1" | "h2" | "h3";
+}
+
+const { className = "", as = "h2" } = Astro.props;
+const Tag = as;
+---
+
+<Tag class={`text-heading-1 font-semibold text-2xl sm:text-3xl md:text-4xl ${className}`}>
     <slot/>
-</h1>
+</Tag>
