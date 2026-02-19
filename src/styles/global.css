@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #022E01;
+  --color-primary: #1E6DEB;
   --color-box-bg: rgb(var(--color-box));
   --color-box-shadow: rgb(var(--box-sd));
   --color-box-border: rgb(var(--box-border));
@@ -63,7 +63,7 @@ button:focus,
 a:focus,
 input:focus,
 textarea:focus {
-  outline: 2px solid #022E01;
+  outline: 2px solid #1E6DEB;
   outline-offset: 2px;
 }
 
@@ -72,7 +72,7 @@ textarea:focus {
   position: absolute;
   top: -40px;
   left: 6px;
-  background: #022E01;
+  background: #1E6DEB;
   color: white;
   padding: 8px;
   text-decoration: none;

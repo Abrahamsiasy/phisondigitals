@@ -3,34 +3,44 @@ import BtnLink from "../shared/BtnLink.astro";
 import Container from "../shared/Container.astro";
 import  Navitem from "../shared/Navitem.astro";
 
-const navItems = [
+type NavItem = {
+    href: string;
+    text: string;
+    dropdown?: { href: string; text: string }[];
+};
+
+const navItems: NavItem[] = [
     {
         href:"/",
         text:"Home"
     },
     {
-        href:"/",
+        href:"/#about-us",
+        text:"Overview"
+    },
+    {
+        href:"/#services",
         text:"Services",
         dropdown: [
-            { href: "/services/foreign-consulting", text: "Foreign Consulting" },
-            { href: "/services/mobile-app-development", text: "Website Development" },
-            { href: "/services/software-development", text: "Software Development" },
-            { href: "/services/custom-app-customization", text: "Custom App Customization" },
-            { href: "/services/ojs-support", text: "OJS Support" },
-            { href: "/services/ecommerce-solutions", text: "E-commerce Solutions" }
+            { href: "/services/strategy-development", text: "Strategy Development" },
+            { href: "/services/content-creation", text: "Content Creation" },
+            { href: "/services/community-engagement", text: "Community Engagement" },
+            { href: "/services/social-media-advertising", text: "Social Media Advertising" },
+            { href: "/services/analytics-reporting", text: "Analytics and Reporting" },
+            { href: "/services/additional-services", text: "Additional Services" }
         ]
     },
     {
-        href:"/#portfolio",
-        text:"Portfolio"
-    },
-    {
-        href:"/#about-us",
-        text:"About"
-    },
-    {
         href:"/#features",
-        text:"Features"
+        text:"Benefits"
+    },
+    {
+        href:"/#portfolio",
+        text:"Packages"
+    },
+    {
+        href:"/#cta",
+        text:"Contact"
     },
 ]
 ---
@@ -46,16 +56,16 @@ const navItems = [
                 <a href="/" class="flex items-center gap-3 group">
                     <div class="relative w-10 h-10 lg:w-12 lg:h-12 overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 bg-white dark:bg-gray-800 p-1">
                         <img 
-                            src="/logos/gojo-logo.ico" 
-                            alt="GojoTech Logo" 
+                            src="/logos/phison-logo.png" 
+                            alt="Phison Digitals Logo" 
                             class="w-full h-full object-contain"
                         />
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-xl lg:text-2xl font-bold bg-gradient-to-r from-[#022E01] to-[#4ade80] bg-clip-text text-transparent">
-                            GojoTech
+                        <span class="text-xl lg:text-2xl font-bold bg-gradient-to-r from-[#1E6DEB] to-[#0F2E5C] bg-clip-text text-transparent">
+                            Phison Digitals
                         </span>
-                        <span class="text-xs text-gray-500 dark:text-gray-400 -mt-1">PLC</span>
+                        <span class="text-xs text-gray-500 dark:text-gray-400 -mt-1">Social Media Agency</span>
                     </div>
                 </a>
             </div>
@@ -67,7 +77,7 @@ const navItems = [
                         if (item.dropdown) {
                             return (
                                 <li class="relative group">
-                                    <button class="flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-[#022E01] dark:hover:text-[#4ade80] font-medium transition-all duration-300 group-hover:scale-105">
+                                    <button class="flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-[#1E6DEB] dark:hover:text-[#1E6DEB] font-medium transition-all duration-300 group-hover:scale-105">
                                         {item.text}
                                         <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -80,9 +90,9 @@ const navItems = [
                                             {item.dropdown.map((dropdownItem, index) => (
                                                 <a 
                                                     href={dropdownItem.href} 
-                                                    class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:text-[#022E01] dark:hover:text-[#4ade80] hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-xl transition-all duration-300 group/item"
+                                                    class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:text-[#1E6DEB] dark:hover:text-[#1E6DEB] hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-xl transition-all duration-300 group/item"
                                                 >
-                                                    <div class="w-2 h-2 bg-gradient-to-r from-[#022E01] to-[#4ade80] rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
+                                                    <div class="w-2 h-2 bg-gradient-to-r from-[#1E6DEB] to-[#0F2E5C] rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
                                                     <span class="font-medium">{dropdownItem.text}</span>
                                                     <svg class="w-4 h-4 ml-auto opacity-0 group-hover/item:opacity-100 transform translate-x-2 group-hover/item:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -98,10 +108,10 @@ const navItems = [
                                 <li>
                                     <a 
                                         href={item.href} 
-                                        class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-[#022E01] dark:hover:text-[#4ade80] font-medium transition-all duration-300 hover:scale-105 relative group"
+                                        class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-[#1E6DEB] dark:hover:text-[#1E6DEB] font-medium transition-all duration-300 hover:scale-105 relative group"
                                     >
                                         {item.text}
-                                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#022E01] to-[#4ade80] transition-all duration-300 group-hover:w-full"></span>
+                                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#1E6DEB] to-[#0F2E5C] transition-all duration-300 group-hover:w-full"></span>
                                     </a>
                                 </li>
                             );
@@ -112,9 +122,9 @@ const navItems = [
                 <!-- CTA Button -->
                 <a 
                     href="/#cta" 
-                    class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#022E01] to-[#1a5d1a] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 hover:translate-y-[-2px] transition-all duration-300"
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1E6DEB] to-[#1554B3] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 hover:translate-y-[-2px] transition-all duration-300"
                 >
-                    <span>Get Consultation</span>
+                    <span>Get Proposal</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
@@ -126,9 +136,9 @@ const navItems = [
                 <!-- Theme Toggle -->
                 <button 
                     data-switch-theme 
-                    class="relative p-2 text-gray-700 dark:text-gray-300 hover:text-[#022E01] dark:hover:text-[#4ade80] rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 group"
+                    class="relative p-2 text-gray-700 dark:text-gray-300 hover:text-[#1E6DEB] dark:hover:text-[#1E6DEB] rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 group"
                 >
-                    <div class="absolute inset-0 bg-gradient-to-r from-[#022E01] to-[#4ade80] rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#1E6DEB] to-[#0F2E5C] rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                     <svg class="w-6 h-6 relative z-10 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path>
                     </svg>
@@ -141,9 +151,9 @@ const navItems = [
                 <!-- Mobile Menu Button -->
                 <button 
                     id="mobile-menu-btn"
-                    class="lg:hidden relative p-2 text-gray-700 dark:text-gray-300 hover:text-[#022E01] dark:hover:text-[#4ade80] rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 group"
+                    class="lg:hidden relative p-2 text-gray-700 dark:text-gray-300 hover:text-[#1E6DEB] dark:hover:text-[#1E6DEB] rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 group"
                 >
-                    <div class="absolute inset-0 bg-gradient-to-r from-[#022E01] to-[#4ade80] rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#1E6DEB] to-[#0F2E5C] rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                     <div class="relative z-10 flex flex-col gap-1.5">
                         <span class="w-6 h-0.5 bg-current rounded-full transition-all duration-300" id="line1"></span>
                         <span class="w-6 h-0.5 bg-current rounded-full transition-all duration-300" id="line2"></span>
@@ -166,8 +176,8 @@ const navItems = [
                 <div class="flex items-center gap-3">
                     <div class="w-8 h-8 bg-white dark:bg-gray-800 rounded-xl p-1 shadow-lg">
                         <img 
-                            src="/logos/gojo-logo.ico" 
-                            alt="GojoTech Logo" 
+                            src="/logos/phison-logo.png" 
+                            alt="Phison Digitals Logo" 
                             class="w-full h-full object-contain"
                         />
                     </div>
@@ -187,7 +197,7 @@ const navItems = [
                         if (item.dropdown) {
                             return (
                                 <li class="mobile-dropdown">
-                                    <button class="mobile-dropdown-btn flex items-center justify-between w-full p-4 text-left text-gray-700 dark:text-gray-300 hover:text-[#022E01] dark:hover:text-[#4ade80] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-all duration-300">
+                                    <button class="mobile-dropdown-btn flex items-center justify-between w-full p-4 text-left text-gray-700 dark:text-gray-300 hover:text-[#1E6DEB] dark:hover:text-[#1E6DEB] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-all duration-300">
                                         <span class="font-medium">{item.text}</span>
                                         <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -197,7 +207,7 @@ const navItems = [
                                         {item.dropdown.map(dropdownItem => (
                                             <a 
                                                 href={dropdownItem.href} 
-                                                class="block p-3 text-gray-600 dark:text-gray-400 hover:text-[#022E01] dark:hover:text-[#4ade80] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-300"
+                                                class="block p-3 text-gray-600 dark:text-gray-400 hover:text-[#1E6DEB] dark:hover:text-[#1E6DEB] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-300"
                                             >
                                                 {dropdownItem.text}
                                             </a>
@@ -210,7 +220,7 @@ const navItems = [
                                 <li>
                                     <a 
                                         href={item.href} 
-                                        class="block p-4 text-gray-700 dark:text-gray-300 hover:text-[#022E01] dark:hover:text-[#4ade80] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-all duration-300 font-medium"
+                                        class="block p-4 text-gray-700 dark:text-gray-300 hover:text-[#1E6DEB] dark:hover:text-[#1E6DEB] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-all duration-300 font-medium"
                                     >
                                         {item.text}
                                     </a>
@@ -225,9 +235,9 @@ const navItems = [
             <div class="p-6 border-t border-gray-200 dark:border-gray-700">
                 <a 
                     href="/#cta" 
-                    class="block w-full text-center px-6 py-4 bg-gradient-to-r from-[#022E01] to-[#1a5d1a] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                    class="block w-full text-center px-6 py-4 bg-gradient-to-r from-[#1E6DEB] to-[#1554B3] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                 >
-                    Get Free Consultation
+                    Contact Us
                 </a>
             </div>
         </div>

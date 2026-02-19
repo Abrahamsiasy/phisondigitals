@@ -10,34 +10,30 @@ import Title from "../shared/Title.astro";
     <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12">
         <div class="max-w-md mx-auto midmd:max-w-none lg:mx-0  lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto">
             <div class="w-full h-80 sm:h-96 midmd:h-full relative">
-                <div class="absolute rotate-45 -left-5 md:-left-10 lg:-left-20 xl:-left-24 p-1 top-1/2 w-16 h-16 bg-gradient-to-br from-primary to-[#f9a825] blur-3xl opacity-50"></div>
-                <div class="absolute  p-1 -top-4 md:-top-10 right-0 w-20 h-20 bg-gradient-to-br from-primary to-[#f9a825] rounded-full blur-3xl opacity-60"></div>
+                <div class="absolute rotate-45 -left-5 md:-left-10 lg:-left-20 xl:-left-24 p-1 top-1/2 w-16 h-16 bg-gradient-to-br from-[#1E6DEB] to-[#0F2E5C] blur-3xl opacity-50"></div>
+                <div class="absolute  p-1 -top-4 md:-top-10 right-0 w-20 h-20 bg-gradient-to-br from-[#1E6DEB] to-[#0F2E5C] rounded-full blur-3xl opacity-60"></div>
                 
-                <span class="absolute w-full aspect-[16/5] -skew-x-12 rounded-full bg-gradient-to-tr from-primary to-[#f9a825] opacity-40 blur-2xl left-0 bottom-0"></span>
-                <img src={"/images/ab-min-removebg-preview.png"} alt="GojoTech team working on e-commerce solutions in Addis Ababa, Ethiopia" 
+                <span class="absolute w-full aspect-[16/5] -skew-x-12 rounded-full bg-gradient-to-tr from-[#1E6DEB] to-[#0F2E5C] opacity-40 blur-2xl left-0 bottom-0"></span>
+                <img src={"/images/ab-min-removebg-preview.png"} alt="Phison Digitals creative team" 
                 width="1240" height="1385"
                 class=" w-auto left-1/2 -translate-x-1/2 absolute bottom-0 max-h-full" />
             </div>
         </div>
         <div class="flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
             <Title>
-                About GojoTech PLC - Ethiopia's Premier Technology Company
+                About Phison Digitals
             </Title>
             <Paragraph className="mt-8">
-                Founded in 2024 by three visionary entrepreneurs - <strong>Abraham Sisay Adem</strong>, <strong>Negusu Sisay Adem</strong>, and <strong>Samson Tesfaye Mamo</strong> - GojoTech PLC is Ethiopia's premier technology company, 
-                dedicated to revolutionizing business operations through innovative digital solutions tailored specifically for the local market.
+                Phison Digitals is a professional social media marketing agency focused on helping businesses grow through strategy, creative content, and audience engagement.
             </Paragraph>
             <Paragraph className="mt-4">
-                We specialize in <strong>e-commerce solutions</strong>, <strong>online shop development</strong>, foreign consulting, and custom software development, helping Ethiopian businesses 
-                navigate the digital transformation landscape with confidence and strategic expertise. Our flagship platform, <strong>GojoShop.et</strong>, 
-                serves over 10,000 buyers and sellers nationwide with advanced features including customer wallet system, order management, and integrated POS.
+                For Diva Jewellery, our goal is to deliver consistent social media growth with high-quality content, targeted campaigns, and clear performance reporting.
             </Paragraph>
             <Paragraph className="mt-4">
-                Based in <strong>Addis Ababa, Ethiopia</strong>, our team combines local market expertise with international technology standards, 
-                delivering cutting-edge solutions that drive business growth and digital innovation across Ethiopia and East Africa.
+                We combine creative execution with practical marketing decisions, so every post, campaign, and interaction supports your business objectives.
             </Paragraph>
             <div class="pt-8 grid grid-cols-2 items-center gap-4 max-w-3xl md:max-w-[none]">
-                <Info description="To become Ethiopia's leading technology partner, empowering businesses to thrive in the global digital economy through innovative e-commerce solutions, online shop development, and strategic partnerships." title="Our Vision">
+                <Info description="Build awareness, drive traffic, and convert audience attention into measurable business growth." title="Our Mission">
                     <span slot="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
@@ -45,7 +41,7 @@ import Title from "../shared/Title.astro";
                         </svg>
                     </span>
                 </Info>
-                <Info description="Innovation, Integrity, Excellence, and Customer Success drive every e-commerce solution, online shop development, and partnership we build in Ethiopia." title="Our Values">
+                <Info description="Strategy, creativity, consistency, and accountability guide every campaign we execute." title="Our Values">
                     <span slot="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
@@ -55,102 +51,9 @@ import Title from "../shared/Title.astro";
             </div>
         </div>
     </Container>
-
-    <!-- Team Section -->
-    <Container className="mt-20">
-        <div class="text-center mb-16">
-            <Title>
-                Meet Our Leadership Team - GojoTech Founders
-            </Title>
-            <Paragraph className="mt-6 max-w-3xl mx-auto">
-                Our experienced leadership team brings together diverse expertise in <strong>e-commerce technology</strong>, <strong>online shop development</strong>, business operations, and foreign investment consulting to drive GojoTech's mission forward in Ethiopia.
-            </Paragraph>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-            <!-- Abraham Sisay Adem -->
-            <div class="group text-center">
-                <div class="relative mb-6 mx-auto w-48 h-48">
-                    <div class="absolute inset-0 bg-gradient-to-br from-primary to-[#f9a825] rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-                    <div class="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl group-hover:scale-105 transition-transform duration-500">
-                        <img 
-                            src="/images/team/abraham_sisay.jpg" 
-                            alt="Abraham Sisay Adem - General Manager and CEO of GojoTech PLC, Ethiopia's premier technology company" 
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        />
-                    </div>
-                    <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br from-primary to-[#f9a825] rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors duration-300 group-hover:drop-shadow-[0_0_15px_rgba(249,168,37,0.6)]">
-                    Abraham Sisay Adem
-                </h3>
-                <p class="text-primary dark:text-yellow-400 font-semibold mb-3 drop-shadow-sm">General Manager & CEO</p>
-                <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                    General Manager and CEO with a proven track record in Ethiopia's tech industry. Oversees operations, spearheads strategic initiatives for e-commerce solutions and online shop development, and cultivates a high-performing team dedicated to delivering cutting-edge technology solutions in Addis Ababa.
-                </p>
-            </div>
-
-            <!-- Negusu Sisay Adem -->
-            <div class="group text-center">
-                <div class="relative mb-6 mx-auto w-48 h-48">
-                    <div class="absolute inset-0 bg-gradient-to-br from-primary to-[#f9a825] rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-                    <div class="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl group-hover:scale-105 transition-transform duration-500">
-                        <img 
-                            src="/images/team/negusu_sisay.jpeg" 
-                            alt="Negusu Sisay Adem - Foreign Investment Expert and CTO of GojoTech PLC, specializing in East Africa technology consulting" 
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        />
-                    </div>
-                    <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br from-primary to-[#f9a825] rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9m0-9c-5 0-9 4-9 9s4 9 9 9" />
-                        </svg>
-                    </div>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors duration-300 group-hover:drop-shadow-[0_0_15px_rgba(249,168,37,0.6)]">
-                    Negusu Sisay Adem
-                </h3>
-                <p class="text-primary dark:text-yellow-400 font-semibold mb-3 drop-shadow-sm">CTO & Foreign Investment Expert</p>
-                <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                    Chief Technology Officer and expert in foreign investment and consulting for East Africa, specializing in e-commerce technology, market analysis, regulatory guidance, and strategic planning. Their extensive experience helps businesses navigate opportunities and achieve success in Ethiopia's dynamic technology markets.
-                </p>
-            </div>
-
-            <!-- Samson Tesfaye Mamo -->
-            <div class="group text-center">
-                <div class="relative mb-6 mx-auto w-48 h-48">
-                    <div class="absolute inset-0 bg-gradient-to-br from-primary to-[#f9a825] rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-                    <div class="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl group-hover:scale-105 transition-transform duration-500">
-                        <img 
-                            src="/images/team/samson_tesfaye.jpg" 
-                            alt="Samson Tesfaye Mamo - Deputy Manager and COO of GojoTech PLC, operations expert in Ethiopian technology sector" 
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        />
-                    </div>
-                    <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br from-primary to-[#f9a825] rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                    </div>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors duration-300 group-hover:drop-shadow-[0_0_15px_rgba(249,168,37,0.6)]">
-                    Samson Tesfaye Mamo
-                </h3>
-                <p class="text-primary dark:text-yellow-400 font-semibold mb-3 drop-shadow-sm">Deputy Manager & COO</p>
-                <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                    Chief Operating Officer and expert in operations and team management, ensuring seamless coordination and efficient workflows for e-commerce platform development and online shop solutions. Their leadership supports the delivery of high-quality technology services and drives the success of our organization in Ethiopia.
-                </p>
-            </div>
-        </div>
-    </Container>
 </section>
 
 <style>
-    /* Additional animations for team cards */
     .group:hover .group-hover\:scale-105 {
         transform: scale(1.05);
     }

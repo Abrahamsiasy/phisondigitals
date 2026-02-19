@@ -10,22 +10,22 @@ const {href, text,className, variant} = Astro.props
 
 const getThemeStyle = (variant:"primary"|"secondary")=>{
     if (variant === "primary") {
-        return "bg-[#022E01] dark:bg-[#4ade80] border-transparent relative after:bg-[#1a5d1a] dark:after:bg-[#16a34a] hover:border-[#1a5d1a] dark:hover:border-[#16a34a]"
+        return "bg-[#1E6DEB] dark:bg-[#1E6DEB] border-transparent relative after:bg-[#1554B3] dark:after:bg-[#1554B3] hover:border-[#1554B3] dark:hover:border-[#1554B3]"
     }
-    return "text-[#022E01] dark:text-[#4ade80] border-[#022E01] dark:border-[#4ade80]"
+    return "text-[#1E6DEB] dark:text-[#1E6DEB] border-[#1E6DEB] dark:border-[#1E6DEB]"
 }
 
 const getTextColor = (variant:"primary"|"secondary") =>{
     if (variant === "primary") {
         return "text-white dark:text-gray-900"
     }
-    return "text-[#022E01] dark:text-[#4ade80]"
+    return "text-[#1E6DEB] dark:text-[#1E6DEB]"
 }
 
 ---
 
 <a href={href} class={`px-6 py-3 rounded-full outline-none relative overflow-hidden border duration-300 ease-linear
-                    after:absolute after:inset-x-0 after:aspect-square after:scale-0 after:opacity-70 after:origin-center after:duration-300 after:ease-linear after:rounded-full after:top-0 after:left-0 after:bg-[#1a5d1a] dark:after:bg-[#16a34a]
+                    after:absolute after:inset-x-0 after:aspect-square after:scale-0 after:opacity-70 after:origin-center after:duration-300 after:ease-linear after:rounded-full after:top-0 after:left-0 after:bg-[#1554B3] dark:after:bg-[#1554B3]
                     ${getThemeStyle(variant)} hover:after:opacity-100 hover:after:scale-[2.5] ${className}`}>
     <span class={`relative ${getTextColor(variant)} z-10`}>
         {text}

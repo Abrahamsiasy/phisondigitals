@@ -12,12 +12,12 @@ export interface Props {
 
 const { 
   title, 
-  description = "GojoTech PLC - Ethiopia's premier technology company specializing in e-commerce solutions, online shop development, foreign consulting, and custom software development. Founded by Abraham Sisay, Negusu Sisay, and Samson Tesfaye.", 
-  keywords = "e-commerce, online shop, GojoTech, Abraham Sisay, Negusu Sisay, Samson Tesfaye, Ethiopia technology, academic journals,software development, foreign consulting, GojoShop.et, customer wallet system, order management, POS system, Laravel, MySQL, Firebase, academic publishing, OJS support, Addis Ababa, Ethiopian tech company ojs ojsethiopia",
+  description = "Phison Digitals is a modern social media marketing agency delivering strategy, content creation, community engagement, and performance-focused campaigns.", 
+  keywords = "Phison Digitals, social media marketing, strategy development, content creation, community engagement, social media advertising, analytics reporting, digital marketing agency",
   canonical 
 } = Astro.props;
 
-const fullTitle = `GojoTech PLC - ${title}`;
+const fullTitle = `${title} | Phison Digitals`;
 const fullDescription = description;
 const fullKeywords = keywords;
 const canonicalUrl = canonical || Astro.url.href;
@@ -28,9 +28,9 @@ const canonicalUrl = canonical || Astro.url.href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/gojo-favicon.ico" />
-    <link rel="shortcut icon" type="image/x-icon" href="/gojo-favicon.ico" />
-    <link rel="apple-touch-icon" href="/gojo-favicon.ico" />
+    <link rel="icon" type="image/png" href="/logos/phison-logo.png" />
+    <link rel="shortcut icon" type="image/png" href="/logos/phison-logo.png" />
+    <link rel="apple-touch-icon" href="/logos/phison-logo.png" />
     <meta name="generator" content={Astro.generator} />
     
     <!-- Primary Meta Tags -->
@@ -38,13 +38,11 @@ const canonicalUrl = canonical || Astro.url.href;
     <meta name="title" content={fullTitle} />
     <meta name="description" content={fullDescription} />
     <meta name="keywords" content={fullKeywords} />
-    <meta name="author" content="GojoTech PLC - Abraham Sisay, Negusu Sisay, Samson Tesfaye" />
+    <meta name="author" content="Phison Digitals" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="language" content="English" />
     <meta name="geo.region" content="ET" />
-    <meta name="geo.placename" content="Addis Ababa, Ethiopia" />
-    <meta name="geo.position" content="9.145;40.4897" />
-    <meta name="ICBM" content="9.145, 40.4897" />
+    <meta name="geo.placename" content="Ethiopia" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalUrl} />
@@ -54,10 +52,10 @@ const canonicalUrl = canonical || Astro.url.href;
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={fullDescription} />
-    <meta property="og:image" content="https://gojotech.et/og-image.jpg" />
+    <meta property="og:image" content="https://phisondigitals.com/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="GojoTech PLC" />
+    <meta property="og:site_name" content="Phison Digitals" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="am_ET" />
 
@@ -66,18 +64,18 @@ const canonicalUrl = canonical || Astro.url.href;
     <meta property="twitter:url" content={canonicalUrl} />
     <meta property="twitter:title" content={fullTitle} />
     <meta property="twitter:description" content={fullDescription} />
-    <meta property="twitter:image" content="https://gojotech.et/og-image.jpg" />
-    <meta property="twitter:creator" content="@gojotech" />
-    <meta property="twitter:site" content="@gojotech" />
+    <meta property="twitter:image" content="https://phisondigitals.com/og-image.jpg" />
+    <meta property="twitter:creator" content="@phisondigitals" />
+    <meta property="twitter:site" content="@phisondigitals" />
 
     <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#022E01" />
-    <meta name="msapplication-TileColor" content="#022E01" />
+    <meta name="theme-color" content="#1E6DEB" />
+    <meta name="msapplication-TileColor" content="#1E6DEB" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="GojoTech PLC" />
-    <meta name="application-name" content="GojoTech PLC" />
-    <meta name="msapplication-TileImage" content="/gojo-favicon.ico" />
+    <meta name="apple-mobile-web-app-title" content="Phison Digitals" />
+    <meta name="application-name" content="Phison Digitals" />
+    <meta name="msapplication-TileImage" content="/logos/phison-logo.png" />
     <meta name="msapplication-config" content="/browserconfig.xml" />
 
     <!-- Structured Data -->
@@ -85,88 +83,56 @@ const canonicalUrl = canonical || Astro.url.href;
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "GojoTech PLC",
-      "alternateName": "GojoTech",
-      "url": "https://gojotech.et",
-      "logo": "https://gojotech.et/logos/gojo-logo.ico",
-      "description": "Ethiopia's premier technology company specializing in e-commerce solutions, online shop development, foreign consulting, and custom software development.",
-      "foundingDate": "2024",
+      "name": "Phison Digitals",
+      "alternateName": "Phison Digitals",
+      "url": "https://phisondigitals.com",
+      "logo": "https://phisondigitals.com/logos/phison-logo.png",
+      "description": "Results-driven social media marketing agency delivering strategy, content creation, engagement, and advertising services.",
+      "foundingDate": "2022",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "ET",
-        "addressLocality": "Addis Ababa",
-        "addressRegion": "Addis Ababa"
+        "addressLocality": "Addis Ababa"
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+251-982-808-182",
+        "telephone": "+251-989-915-436",
         "contactType": "customer service",
-        "email": "info@gojotech.et",
+        "email": "phisondigitals@gmail.com",
         "availableLanguage": ["English", "Amharic"]
       },
-      "founder": [
-        {
-          "@type": "Person",
-          "name": "Abraham Sisay",
-          "jobTitle": "Founder & CEO",
-          "worksFor": {
-            "@type": "Organization",
-            "name": "GojoTech PLC"
-          }
-        },
-        {
-          "@type": "Person",
-          "name": "Negusu Sisay",
-          "jobTitle": "Founder & CTO",
-          "worksFor": {
-            "@type": "Organization",
-            "name": "GojoTech PLC"
-          }
-        },
-        {
-          "@type": "Person",
-          "name": "Samson Tesfaye",
-          "jobTitle": "Founder & COO",
-          "worksFor": {
-            "@type": "Organization",
-            "name": "GojoTech PLC"
-          }
-        }
-      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Technology Services",
+        "name": "Social Media Marketing Services",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "E-commerce Solutions",
-              "description": "Online shop development and e-commerce platforms including GojoShop.et"
+              "name": "Strategy Development",
+              "description": "Market research, goal setting, and content planning for social media growth"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Foreign Consulting",
-              "description": "Business setup and consulting services for foreign companies in Ethiopia"
+              "name": "Content Creation",
+              "description": "Visual and written content designed for engagement and conversion"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Software Development",
-              "description": "Custom software development and enterprise solutions"
+              "name": "Social Media Advertising",
+              "description": "Targeted ad campaigns with optimization and performance reporting"
             }
           }
         ]
       },
       "sameAs": [
-        "https://facebook.com/gojotech",
-        "https://linkedin.com/company/gojotech",
-        "https://twitter.com/gojotech"
+        "https://phisondigitals.com/"
       ],
       "areaServed": {
         "@type": "Country",
@@ -184,21 +150,16 @@ const canonicalUrl = canonical || Astro.url.href;
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "GojoTech PLC",
-      "image": "https://gojotech.et/logos/gojo-logo.ico",
-      "description": "Ethiopia's premier technology company specializing in e-commerce solutions and software development",
+      "name": "Phison Digitals",
+      "image": "https://phisondigitals.com/logos/phison-logo.png",
+      "description": "Professional social media marketing agency",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "ET",
         "addressLocality": "Addis Ababa"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 9.145,
-        "longitude": 40.4897
-      },
-      "url": "https://gojotech.et",
-      "telephone": "+251-982-808-182",
+      "url": "https://phisondigitals.com",
+      "telephone": "+251-989-915-436",
       "priceRange": "$$",
       "openingHours": "Mo-Fr 09:00-18:00",
       "currenciesAccepted": "ETB, USD",
@@ -338,9 +299,9 @@ const canonicalUrl = canonical || Astro.url.href;
     --color-box: 255 255 255;
     --box-border: 229 231 235;
     --box-sd: 226 232 240 / 0.5;
-    --heading-1: 23 37 84;
-    --heading-2: 31 41 55;
-    --heading-3: 55 65 81;
+    --heading-1: 15 46 92;
+    --heading-2: 26 26 26;
+    --heading-3: 107 114 128;
   }
 
   .dark {
