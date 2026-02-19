@@ -1,0 +1,123 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/shared/Container.astro";
+import Title from "../components/shared/Title.astro";
+import { mediaPhotos, mediaVideos } from "../utils/media";
+---
+
+<Layout
+    title="Media Showcase"
+    description="Phison Digitals media page with campaign videos and production photos."
+    keywords="Phison Digitals media, social media videos, campaign photos, youtube shorts, content showcase"
+    canonical="https://phisondigitals.com/media"
+>
+    <main class="pt-32 pb-16">
+        <Container className="space-y-14">
+            <section class="text-center max-w-3xl mx-auto">
+                <Title as="h1" className="mb-4">Media Showcase</Title>
+                <p class="text-heading-3 text-lg">
+                    Explore all video and photo content samples. This page can be updated anytime with your real YouTube, TikTok, and Instagram links.
+                </p>
+            </section>
+
+            <section class="space-y-6">
+                <h2 class="text-2xl md:text-3xl font-semibold text-heading-1">All Videos</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {mediaVideos.map((video) => (
+                        <article class="bg-box-bg border border-box-border rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+                            <div class="aspect-video bg-black">
+                                <iframe
+                                    class="w-full h-full"
+                                    src={video.embedUrl}
+                                    title={video.title}
+                                    loading="lazy"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allowfullscreen
+                                ></iframe>
+                            </div>
+                            <div class="p-4 space-y-2">
+                                <p class="text-sm font-semibold text-[#1E6DEB]">{video.platform}</p>
+                                <h3 class="text-base font-semibold text-heading-1">{video.title}</h3>
+                                <a href={video.link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium text-[#1E6DEB] hover:text-[#1554B3]">
+                                    Open on platform
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </section>
+
+            <section class="space-y-6">
+                <h2 class="text-2xl md:text-3xl font-semibold text-heading-1">All Photos</h2>
+                <div class="gallery-columns grid-loading-fx2">
+                    {mediaPhotos.map((photo, index) => (
+                        <article class="gallery-item" style={`animation-delay:${(index * 0.06).toFixed(2)}s`}>
+                            <a href={photo.image} target="_blank" rel="noopener noreferrer" class="group block bg-box-bg border border-box-border rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300" aria-label={`Open ${photo.title}`}>
+                                <img src={photo.image} alt={photo.title} loading="lazy" width="367" height="267" class="w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                <div class="p-3 space-y-1">
+                                    <p class="text-xs font-semibold uppercase tracking-wide text-[#1E6DEB]">{photo.category}</p>
+                                    <h3 class="text-sm font-semibold text-heading-1">{photo.title}</h3>
+                                    <p class="text-xs text-heading-3">Source: {photo.source}</p>
+                                </div>
+                            </a>
+                        </article>
+                    ))}
+                </div>
+            </section>
+        </Container>
+    </main>
+</Layout>
+
+<style>
+    .gallery-columns {
+        columns: 1;
+        column-gap: 1rem;
+    }
+
+    .gallery-item {
+        break-inside: avoid;
+        margin-bottom: 1rem;
+        opacity: 0;
+        transform: perspective(1000px) translateY(60px) scale(0.82) rotateX(-36deg);
+        transform-origin: 50% 100%;
+        animation: galleryFx2In 0.85s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+        will-change: transform, opacity;
+    }
+
+    .gallery-item .group {
+        transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .gallery-item:hover .group {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 34px rgba(15, 46, 92, 0.2);
+        border-color: #1E6DEB;
+    }
+
+    @keyframes galleryFx2In {
+        60% {
+            opacity: 1;
+            transform: perspective(1000px) translateY(-6px) scale(1.01) rotateX(2deg);
+        }
+        100% {
+            opacity: 1;
+            transform: perspective(1000px) translateY(0) scale(1) rotateX(0deg);
+        }
+    }
+
+    @media (min-width: 768px) {
+        .gallery-columns {
+            columns: 2;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .gallery-columns {
+            columns: 3;
+        }
+    }
+</style>
